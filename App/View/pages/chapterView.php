@@ -46,7 +46,7 @@ if ($_SESSION['countLines'] <= 1) {
 ?>
     <div class="">
         <a href="../../index.php?p=chapter&id=<?= $_GET['id'] ?>">
-            <h5 id=author><?= $comment['author'] ?> le <?= $comment['commentDate'] ?></h5>
+            <h5 id=author><?= $comment['author'] ?> le <?= $comment['commentsDate'] ?></h5>
         </a>
         <article id="comment" class=""><?= $comment['comment'] ?><br/><br/></article>
     </div>

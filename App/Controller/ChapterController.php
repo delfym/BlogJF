@@ -35,14 +35,12 @@ class ChapterController extends Controller {
         }
     }
 
-    public function post($data){
+    public function post(){
         if (!isset($_POST)){
-            echo 'je suis le 1 <br/>';
-            return;
+            return '';
         } else {
-            echo 'je suis le 2 <br/>';
           $comment = new CommentManager();
-          $comment->addComment($data, $_POST);
+          $comment->addComment($_POST);
          // header('Location:\App\index.php');
          // exit;
         }

@@ -29,9 +29,10 @@ abstract class Model
         } elseif ($request !== null && ($parameters != null)) {
             $req = $this->db->prepare($request);
             $req->execute($parameters);
-            $reqType = substr($request, 0);
+            $reqType = substr($request, 0,11);
             if($reqType == 'INSERT INTO') {
-                return '';
+                header('Location: index.php?p=chapter&id='.$_GET['id']);
+               // return '';
             } else {
                 $this->count = $req->rowCount();
                 if ($this->count > 1) {

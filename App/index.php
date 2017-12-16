@@ -8,7 +8,8 @@ $page = new App\Controller\ChapterController();
 try {
     if (isset($_GET['p'])){
         if ($_GET['p'] == 'post') {
-            $page->post($_POST);
+          //  $page->post($_POST);
+            $page->post();
         } elseif (isset($_GET)) {
             $page->chapter(htmlspecialchars($_GET['id']));
         }
