@@ -16,16 +16,11 @@ class CommentManager extends Model {
     }
 
     public function getComments($chapterId) {
-        $req = $this->request('SELECT id, author, comment, DATE_FORMAT(commentDate, \' %d/%m/%Y à %Hh %imin %ss\') AS commentsDate, chapterId FROM comments WHERE chapterId = ? ORDER BY commentsDate ASC', [$chapterId]);
+        $req = $this->request('SELECT id, author, comment, DATE_FORMAT(commentDate, \' %d/%m/%Y à %Hh %imin %ss\') AS commentsDate, chapterId FROM comments WHERE chapterId = ? ORDER BY commentDate DESC', [$chapterId]);
         return $req;
     }
 
-
-
     public function addComment($parameters=[]) {
-       // echo '<pre>';
-        //var_dump($_POST);
-        //echo '<br/>';
         $this->request('INSERT INTO comments (author, comment, commentDate, chapterId) VALUES (:author, :comment, NOW(), :chapterId)',
         array(
             'author' => htmlspecialchars($_POST['author']),
