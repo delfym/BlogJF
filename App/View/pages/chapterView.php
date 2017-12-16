@@ -38,12 +38,12 @@ if(true == $comments){
 if ($_SESSION['countLines'] <= 1) {
 ?>
 <div class="">
-    <article class="">
+    <div class="">
         <a href="../../index.php?p=chapter&id=<?= $_GET['id'] ?>">
             <h5 id=author><?= $comments['author'] ?> le <?= $comments['commentDate'] ?></h5>
         </a>
         <article id="comment" class=""><?= $comments['comment'] ?><br/><br/></article>
-    </article>
+    </div>
 <?php
 } else {
     foreach ($comments as $comment) :
