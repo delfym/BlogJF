@@ -13,14 +13,13 @@ class View
     protected $variables;
     protected $template = 'template'; // par défaut
 
+
     public function generate($view, $variables = [], $comments=[], $countLines = null){
-        //echo '<br/> generate mère *** vue depuis le controller mère = ' . $view;
         $viewPath1 = dirname(__DIR__ ) . '/' . $this->view . $view;
         ob_start();
         extract($variables);
 
         if (isset($comments) && (true == $comments)) {
-         //   var_dump($comments);
             extract($comments);
         }
         if (isset($countLines)){
@@ -29,6 +28,9 @@ class View
         }
         $content = ob_get_clean();
         require ($viewPath1 . '.php');
-        // require_once $this->template;
+    }
+
+    public function getExtract($chapter){
+        return $data = substr($chapter, 0, 10);
     }
 }

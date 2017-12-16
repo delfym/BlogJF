@@ -11,8 +11,6 @@ class ChapterController extends Controller {
     private $chapter;
     private $comment;
     private $view;
-    private $content;
-    private $count;
 
     public function __construct() {
         $this->chapter = new \App\Model\ChapterManager();

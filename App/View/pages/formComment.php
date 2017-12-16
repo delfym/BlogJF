@@ -5,8 +5,6 @@
  * Date: 14/12/2017
  * Time: 16:42
  */
-//namespace App;
-
 
 $form = new App\Form();
 
