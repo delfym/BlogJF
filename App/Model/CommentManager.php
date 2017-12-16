@@ -23,15 +23,15 @@ class CommentManager extends Model {
 
 
     public function addComment($parameters=[]) {
-// Effectuer ici la requête qui insère le commentaire
-        $req = $bdd->prepare('INSERT INTO comments (author, comment, commentDate, chapterId) VALUES (:author, :comment, NOW(), :chapterId)');
-
-        $req->execute(array(
+        echo '<pre>';
+        var_dump($_POST);
+        echo '<br/>';
+        $req = $this->request('INSERT INTO comments (author, comment, commentDate, chapterId) VALUES (:author, :comment, NOW(), :chapterId)',
+        array(
             'author' => htmlspecialchars($_POST['author']),
-            'CommentManager' => htmlspecialchars($_POST['CommentManager']),
-            'chapterId' => htmlspecialchars($_POST['chapterId'])
-        ));
-      //  $req = $bdd->prepare('INSERT INTO comments (author, comment, commentDate, chapterId) VALUES (:author, :comment, NOW(), :chapterId)');
-    }
+            'comment' => htmlspecialchars($_POST['comment']),
+            'chapterId' => htmlspecialchars($_POST['chapterId'])));
+       // var_dump($req);
+        }
 
 }

@@ -29,11 +29,16 @@ abstract class Model
         } elseif ($request !== null && ($parameters != null)) {
             $req = $this->db->prepare($request);
             $req->execute($parameters);
-            $this->count = $req->rowCount();
-            if ($this->count > 1) {
-                return $req->fetchAll(\PDO::FETCH_ASSOC);
+            $reqType = substr($request, 0);
+            if($reqType == 'INSERT INTO') {
+                return '';
             } else {
-                return $req->fetch(\PDO::FETCH_ASSOC);
+                $this->count = $req->rowCount();
+                if ($this->count > 1) {
+                    return $req->fetchAll(\PDO::FETCH_ASSOC);
+                } else {
+                    return $req->fetch(\PDO::FETCH_ASSOC);
+                }
             }
         }
     }

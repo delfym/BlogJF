@@ -13,21 +13,17 @@ require_once dirname(__DIR__).'/template.php';
 </div>
 <div class="">
     <div class="">
-        <form class="form-group" action="#" method="post">
+        <form class="form-group" action="../../blogJF/App/index.php?p=post&id=<?= $_GET['id'] ?>" method="post">
             <div class="form-group">
                 <label class="control-label">Pseudo : </label>
                 <input type="text" name="author" class="form-control" value=" "/>
             </div>
-            <div class="form-group">
-                <label class="control-label">Titre du commentaire : </label>
-                <input class="form-control" type="text" name="titreComm">
-            </div>
+                <input class="form-inline" type="hidden" name="chapterId" value="<?= $_GET['id'] ?>">
             <div class="form-group">
                 <label class="control-label" for="comment">Mon message : </label>
                 <textarea class="form-control" name="comment" rows="5" cols=""></textarea>
             </div>
-                <input type="submit" value="Envoyer"/> <!--envoi des données à mySql-->
-
+            <button class="pull-right btn btn-default" type="submit">Envoyer</button><br/>
         </form>
     </div>
 </div>
