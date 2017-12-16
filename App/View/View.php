@@ -29,8 +29,4 @@ class View
         $content = ob_get_clean();
         require ($viewPath1 . '.php');
     }
-
-    public function getExtract($chapter){
-        return $data = substr($chapter, 0, 10);
-    }
 }

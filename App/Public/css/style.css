@@ -19,6 +19,7 @@ header {
 /*	background-image: linear-gradient(to bottom, #7a0614 30%, #1f2023);  */
 }
 /* customisation du formulaire */
+
 .formCom
 {
 	text-align: left;
@@ -30,6 +31,7 @@ form label
 {
 	margin: 6px;
 }
+
 
 section
 {
@@ -64,7 +66,6 @@ article
 	border-bottom-right-radius: 4px;
 	border-bottom-left-radius: 4px;
 	background-color: #d5dae2;
-/*	color: #A18F8C; */
 	color: #1f2023;
 	text-align: justify;
 	padding: 25px;

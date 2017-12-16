@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<title>Blog de JF</title>
     <link rel="stylesheet" type="text/css" href="Public/Bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="Public/Bootstrap/style2.css">
     <link rel="stylesheet" type="text/css" href="Public/css/style.css">
 </head>
 
