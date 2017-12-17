@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: delphinemillotpedrero
- * Date: 30/11/2017
- * Time: 11:18
- */
+
 namespace App\Controller;
 
 use App\Model\CommentManager;
@@ -42,8 +37,6 @@ class ChapterController extends Controller {
         } else {
           $comment = new CommentManager();
           $comment->addComment($_POST);
-         // header('Location:\App\index.php');
-         // exit;
         }
     }
 

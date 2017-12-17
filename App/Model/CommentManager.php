@@ -8,6 +8,7 @@
 namespace App\Model;
 
 class CommentManager extends Model {
+
     public function getComment($id){
         // On récupère tout le contenu de la table commentaires pour ce billet
         $reply = $this->db->getPDO()->prepare('SELECT id, author, comment, DATE_FORMAT(commentDate, \'%d/%m/%Y à %Hh%imin%ss\') AS commentDate, chapterId FROM comments WHERE chapterId = ? ORDER BY commentDate DESC');

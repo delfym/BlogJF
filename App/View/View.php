@@ -17,7 +17,9 @@ class View
     public function generate($view, $variables = [], $comments=[], $countLines = null){
         $viewPath1 = dirname(__DIR__ ) . '/' . $this->view . $view;
         ob_start();
-        extract($variables);
+        if(!empty($variables)){
+            extract($variables);
+        }
 
         if (isset($comments) && (true == $comments)) {
             extract($comments);

@@ -32,7 +32,7 @@ abstract class Model
             $reqType = substr($request, 0,11);
             if($reqType == 'INSERT INTO') {
                 header('Location: index.php?p=chapter&id='.$_GET['id']);
-               exit();
+                exit();
             } else {
                 $this->count = $req->rowCount();
                 if ($this->count > 1) {
