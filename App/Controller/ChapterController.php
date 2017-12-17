@@ -36,8 +36,9 @@ class ChapterController extends Controller {
     }
 
     public function post(){
-        if (!isset($_POST)){
-            return '';
+        if (!isset($_POST) || empty($_POST['author']) || empty($_POST['comment'])){
+            header('Location: index.php?p=chapter&id='.$_GET['id']);
+            exit();
         } else {
           $comment = new CommentManager();
           $comment->addComment($_POST);
