@@ -31,8 +31,7 @@ class ChapterManager extends Model {
     }
 
     public function getChapter($id) {
-        $req = $this->request('SELECT id, title, content, DATE_FORMAT(creationDate, \'%d/%m/%Y\') AS chapterDate  FROM chapter WHERE id = ?', [$id]);
-        return $req;
+        return $this->request('SELECT id, title, content, DATE_FORMAT(creationDate, \'%d/%m/%Y\') AS chapterDate  FROM chapter WHERE id = ?', [$id]);
     }
 
 }

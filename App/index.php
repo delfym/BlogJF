@@ -5,7 +5,7 @@ require 'Autoload.php';
 \App\Autoload::register();
 
 $page = new App\Controller\ChapterController();
-$user = new App\Controller\Admin\Admin();
+$user = new App\Controller\UserController();
 
 try {
     if (isset($_GET['p'])){
@@ -14,7 +14,7 @@ try {
         } elseif (isset($_GET) && !empty($_GET['id'])) {
             $page->chapter(htmlspecialchars($_GET['id']));
         } elseif ($_GET['p'] == 'login'){
-            $user->login();
+            $user->setLogin();
         }
 
     } else {

@@ -38,6 +38,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?p=chapter&id=4">Chapitre 4</a>
                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" href="index.php?p=login">Connexion</a>
+                     </li>
                  </div>
             </div>
         </div>

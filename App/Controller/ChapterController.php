@@ -5,15 +5,6 @@ namespace App\Controller;
 use App\Model\CommentManager;
 
 class ChapterController extends Controller {
-    private $chapter;
-    private $comment;
-    private $view;
-
-    public function __construct() {
-        $this->chapter = new \App\Model\ChapterManager();
-        $this->comment = new \App\Model\CommentManager();
-        $this->view = new \App\View\View();
-    }
 
     public function home() {
             $chapters = $this->chapter->getChapters();
