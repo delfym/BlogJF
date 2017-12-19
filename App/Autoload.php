@@ -27,7 +27,7 @@ class Autoload {
             $pos = strpos($classPath, '\\');
             if($pos != 0){
                 $classPath = str_replace('\\', '/', $classPath);
-                require  __DIR__ . $classPath . '.php';
+                  require  __DIR__ . $classPath . '.php';
             } else {
                 $classPath = str_replace(__NAMESPACE__ . '\\', '/' . 'Controller' . '/', $class);
                 require __DIR__ . $classPath . '.php';

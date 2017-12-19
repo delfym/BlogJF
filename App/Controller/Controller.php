@@ -15,6 +15,7 @@ namespace App\Controller;
 
 abstract class Controller {
     protected $view;
+    protected $viewAdmin;
     protected $chapter;
     protected $comment;
 
@@ -22,6 +23,7 @@ abstract class Controller {
         $this->chapter = new \App\Model\ChapterManager();
         $this->comment = new \App\Model\CommentManager();
         $this->view = new \App\View\View();
+        $this->viewAdmin = new \App\View\Admin\AdminView();
     }
    // public function request()
 
