@@ -7,8 +7,6 @@
  */
 
 namespace App\Model;
-//require_once 'DbAccess.php';
-
 
 abstract class Model
 {
@@ -24,20 +22,19 @@ abstract class Model
         if ($parameters == null) {
             $req = $this->db->query($request);
             return $req->fetchAll(\PDO::FETCH_ASSOC);
+
         } elseif ($request !== null && ($parameters != null)) {
             $req = $this->db->prepare($request);
-            $req->execute($parameters);
-            $reqType = substr($request, 0,11);
-            if($reqType == 'INSERT INTO' || $reqType == 'UPDATE' || $reqType == 'DELETE') {
-                header('Location: index.php?p=chapter&id='.$_GET['id']);
-                exit();
+            $res =$req->execute($parameters);
+             $reqType = substr($request, 0, 11 );
+            if (($reqType == 'INSERT INTO') || ($reqType == 'UPDATE') || ($reqType == 'DELETE') ){
+                return '';
+            }
+            $this->count = $req->rowCount();
+            if ($this->count > 1) {
+                return $req->fetchAll(\PDO::FETCH_ASSOC);
             } else {
-                $this->count = $req->rowCount();
-                if ($this->count > 1) {
-                    return $req->fetchAll(\PDO::FETCH_ASSOC);
-                } else {
-                    return $req->fetch(\PDO::FETCH_ASSOC);
-                }
+                return $req->fetch(\PDO::FETCH_ASSOC);
             }
         }
     }

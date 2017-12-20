@@ -13,10 +13,13 @@ try {
             $page->post();
         } elseif (isset($_GET) && !empty($_GET['id'])) {
             $page->chapter(htmlspecialchars($_GET['id']));
-        } elseif ($_GET['p'] == 'login'){
+        } elseif ($_GET['p'] == 'login') {
             $user->setLogin();
+        } elseif  ($_GET['p'] == 'chapter'){
+            $page->chapter($_GET['id']);
+        }elseif  ($_GET['p'] == 'home'){
+            $page->home();
         }
-
     } else {
         $page->home();
     }

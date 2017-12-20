@@ -9,7 +9,7 @@ namespace App\Model;
 
 class ChapterManager extends Model {
     public function create(){
-        $req = $this->request('INSERT INTO chapter(title, content, creationDate) VALUES (:title, :content, NOW())',
+        $this->request('INSERT INTO chapter(title, content, creationDate) VALUES (:title, :content, NOW())',
         (array(
             'title' => htmlspecialchars($_POST ['title']),
             'content' => htmlspecialchars($_POST['content'])
@@ -23,7 +23,7 @@ class ChapterManager extends Model {
         );
     }
     public function delete($id){
-        $this->db->getPDO()->exec('DELETE FROM chapter WHERE id = '. $id);
+        $this->request('DELETE FROM chapter WHERE id = '. $id);
     }
 
     public function getChapters() {

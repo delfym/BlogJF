@@ -1,11 +1,10 @@
 <?php
 require_once dirname(__DIR__) . '/template.php';
-define('ROOT', dirname(__DIR__));
 ?>
 
 <div class="">
     <div class="">
-        <form class="form-group" action="<?= ROOT . '/Admin/index.php?p=home'   ?>" method="post">
+        <form class="form-group" action="indexAdmin.php?p=home" method="post">
             <div class="form-group">
                 <label class="control-label">Identifiant : </label>
                 <input type="text" name="username" class="form-control" value=""/>

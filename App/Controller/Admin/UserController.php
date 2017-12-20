@@ -49,6 +49,9 @@ class UserController extends \App\Controller\Controller
     }
 
     public function home() {
-        $this->viewAdmin->generate('chaptetList');
+        $chapters = $this->chapter->getChapters();
+        //echo '<pre>';
+        //var_dump($chapters);
+        $this->viewAdmin->generate('chapterList',$chapters);
     }
 }

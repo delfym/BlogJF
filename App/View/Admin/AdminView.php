@@ -12,13 +12,14 @@ class AdminView  {
 
 
     public function generate($view, $variables = []){
-        $viewPath1 = dirname(__DIR__ ) . '/' . $this->view . $view;
+
+        $viewPath = dirname(__DIR__ ) . '/' . $this->view . $view;
         ob_start();
         if(!empty($variables)){
             extract($variables);
         }
         $content = ob_get_clean();
-         require ($viewPath1 . '.php');
+         require ($viewPath . '.php');
     }
 
 }

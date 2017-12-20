@@ -22,11 +22,13 @@ class CommentManager extends Model {
     }
 
     public function addComment($parameters=[]) {
-        $this->request('INSERT INTO comments (author, comment, commentDate, chapterId) VALUES (:author, :comment, NOW(), :chapterId)',
+        $res = $this->request('INSERT INTO comments (author, comment, commentDate, chapterId) VALUES (:author, :comment, NOW(), :chapterId)',
         array(
             'author' => htmlspecialchars($_POST['author']),
             'comment' => htmlspecialchars($_POST['comment']),
             'chapterId' => htmlspecialchars($_POST['chapterId'])));
-        }
+       // var_dump($res);
+        return $res;
+    }
 
 }
