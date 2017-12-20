@@ -5,11 +5,11 @@
  * Date: 17/12/2017
  * Time: 22:52
  */
-namespace App\Controller;
+namespace App\Controller\Admin;
 
-use App\Model\Users;
+use App\Model\Admin\Users;
 
-class UserController extends Controller
+class UserController extends \App\Controller\Controller
 {
     private $user;
     private $password;
@@ -34,18 +34,21 @@ class UserController extends Controller
     /*
      * récupère et contrôle les id envoyés ds form
      */
-    public function setLogin($login = [])
-    {
+    public function setLogin($login = []) {
         if (!empty($login)) {
-            echo 'je suis là';
             $this->user = htmlspecialchars($login['username']);
             $this->password = htmlspecialchars($login['password']);
             if (true == $this->loginAuth()) {
-                $this->view->generate('admin'); //envoie vers une page avec tableau listant les chapitres existants
+                $chapters = $this->chapter->getChapters();
+                $this->view->generate('admin','chapters'); //envoie vers une page avec tableau listant les chapitres existants
                 //intégration de CRUD
             }
         } else {
             $this->viewAdmin->generate('login');
         }
+    }
+
+    public function home() {
+        $this->viewAdmin->generate('chaptetList');
     }
 }

@@ -5,7 +5,7 @@ require 'Autoload.php';
 \App\Autoload::register();
 
 $page = new App\Controller\ChapterController();
-$user = new App\Controller\UserController();
+$user = new App\Controller\Admin\UserController();
 
 try {
     if (isset($_GET['p'])){

@@ -6,10 +6,10 @@
  * Time: 09:05
  */
 
-namespace App\Model;
+namespace App\Model\Admin;
 
 
-class Users extends Model
+class Users extends \App\Model\Model
 {
     private $username;
     private $password;

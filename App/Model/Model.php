@@ -15,14 +15,12 @@ abstract class Model
     protected $db;
     protected $count;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->db = new DbAccess();
         $this->db = $this->db->getPDO();
     }
 
-    public function request($request, $parameters = [])
-    {
+    public function request($request, $parameters = []) {
         if ($parameters == null) {
             $req = $this->db->query($request);
             return $req->fetchAll(\PDO::FETCH_ASSOC);
@@ -44,8 +42,7 @@ abstract class Model
         }
     }
 
-    public function getCount()
-    {
+    public function getCount() {
         return $this->count;
     }
 }
