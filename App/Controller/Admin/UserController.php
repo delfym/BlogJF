@@ -54,4 +54,13 @@ class UserController extends \App\Controller\Controller
         //var_dump($chapters);
         $this->viewAdmin->generate('chapterList',$chapters);
     }
+
+    public function chapter($id) {
+        $chapter = $this->chapter->getChapter($id);
+        $this->viewAdmin->generate('chapterView', $chapter);
+    }
+
+    public function update(){
+
+    }
 }

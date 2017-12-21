@@ -12,6 +12,11 @@ try {
             $user->home();
         } elseif ($_GET['p'] == 'login'){
             $user->setLogin();
+        } elseif ($_GET['p'] == 'chapter'){
+            //echo $_POST['chapterSelected'];
+            $user->chapter($_POST['chapterSelected']);
+        } elseif ($_GET['p'] == 'update') {
+            $user->update();
         }
     } else {
         $user->home();

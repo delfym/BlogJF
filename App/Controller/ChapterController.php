@@ -26,13 +26,8 @@ class ChapterController extends Controller {
             header('Location: index.php?p=chapter&id='.$_GET['id']);
             exit();
         } else {
-          //  echo 'test 2 <br/>';
-          $comment = new CommentManager();
-          //var_dump($comment);
-          $comment->addComment($_POST);
-       //   echo '<pre>';
-         // var_dump($res);
-           //echo 'test 3 <br/>';
+            $comment = new CommentManager();
+            $comment->addComment($_POST);
             header('Location: index.php?p=chapter&id='.$_GET['id']);
             exit();
         }

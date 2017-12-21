@@ -6,6 +6,8 @@
 	<title>Blog de JF</title>
     <link rel="stylesheet" type="text/css" href="Public/Bootstrap/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="Public/css/style.css">
+    <script src="Public/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
 </head>
 
 <body class="container-fluid mr-0">

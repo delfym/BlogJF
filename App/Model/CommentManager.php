@@ -27,8 +27,7 @@ class CommentManager extends Model {
             'author' => htmlspecialchars($_POST['author']),
             'comment' => htmlspecialchars($_POST['comment']),
             'chapterId' => htmlspecialchars($_POST['chapterId'])));
-       // var_dump($res);
-        return $res;
+            return $res;
     }
 
 }
