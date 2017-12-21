@@ -61,6 +61,15 @@ class UserController extends \App\Controller\Controller
     }
 
     public function update(){
+        $chapter = $this->chapter->update($id);
+        $this->viewAdmin->generate('chapterView', $chapter);
+    }
+
+    public function delete(){
+
+    }
+
+    public function create(){
 
     }
 }
