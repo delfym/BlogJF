@@ -25,9 +25,9 @@ abstract class Model
 
         } elseif ($request !== null && ($parameters != null)) {
             $req = $this->db->prepare($request);
-            $res =$req->execute($parameters);
-             $reqType = substr($request, 0, 11 );
-            if (($reqType == 'INSERT INTO') || ($reqType == 'UPDATE') || ($reqType == 'DELETE') ){
+            $reqType = substr($request, 0, 6 );
+            $req->execute($parameters);
+            if (($reqType == 'INSERT') || ($reqType == 'UPDATE') || ($reqType == 'DELETE')){
                 return '';
             }
             $this->count = $req->rowCount();

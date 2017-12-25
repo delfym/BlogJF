@@ -8,26 +8,28 @@
 namespace App\Model;
 
 class ChapterManager extends Model {
-    public function create(){
+
+    public function create($data){
         $this->request('INSERT INTO chapter(title, content, creationDate) VALUES (:title, :content, NOW())',
         (array(
-            'title' => htmlspecialchars($_POST ['title']),
-            'content' => htmlspecialchars($_POST['content'])
+            'title' => htmlspecialchars($data ['title']),
+            'content' => htmlspecialchars($data['content'])
         )));
     }
 
-    public function update($id){
-        $this->request('UPDATE chapter SET title = :title, content= :CONTENT, creationDate = NOW() WHERE id = '. $id,
-            array('title' => htmlspecialchars($_POST['title']),
-            'content'=> htmlspecialchars($_POST['content']))
+    public function update($data){
+        $this->request('UPDATE chapter SET title = :title, content = :content, creationDate = NOW() WHERE id =' . $data['id'],
+            array(
+            'title' => htmlspecialchars($data['title']),
+            'content'=> htmlspecialchars($data['content']))
         );
     }
     public function delete($id){
-        $this->request('DELETE FROM chapter WHERE id = '. $id);
+        $this->request('DELETE FROM chapter WHERE id = ?', [$id]);
     }
 
     public function getChapters() {
-        return $this->request('SELECT id, title, content, DATE_FORMAT(creationDate, \'%d/%m/%Y\') AS chapterDate FROM chapter ORDER BY creationDate LIMIT 0,10' );
+        return $this->request('SELECT id, title, content, DATE_FORMAT(creationDate, \'%d/%m/%Y\') AS chapterDate FROM chapter ORDER BY id LIMIT 0,10' );
     }
 
     public function getChapter($id) {

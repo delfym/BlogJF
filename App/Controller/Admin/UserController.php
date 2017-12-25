@@ -50,8 +50,6 @@ class UserController extends \App\Controller\Controller
 
     public function home() {
         $chapters = $this->chapter->getChapters();
-        //echo '<pre>';
-        //var_dump($chapters);
         $this->viewAdmin->generate('chapterList',$chapters);
     }
 
@@ -60,16 +58,28 @@ class UserController extends \App\Controller\Controller
         $this->viewAdmin->generate('chapterView', $chapter);
     }
 
-    public function update(){
-        $chapter = $this->chapter->update($id);
+    public function update($data){
+        $id = $data['id'];
+        $chapter = $this->chapter->update($data);
+        $chapter = $this->chapter->getChapter($id);
+        //var_dump($chapter);
         $this->viewAdmin->generate('chapterView', $chapter);
     }
 
-    public function delete(){
-
+    public function delete($id){
+        $this->chapter->delete($id);
+        $chapters = $this->chapter->getChapters();
+        $this->viewAdmin->generate('chapterList', $chapters);
     }
 
-    public function create(){
+    public function create($data){
+        $newChapter = $this->chapter->create($data);
+        var_dump($newChapter);
+        $chapters = $this->chapter->getChapters();
+        $this->viewAdmin->generate('chapterList', $chapters);
+    }
 
+    public function chapterNew(){
+        $this->viewAdmin->generate('chapterNew');
     }
 }
