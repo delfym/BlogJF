@@ -3,9 +3,6 @@
 namespace App\View\Admin;
 
 class AdminView  {
-    //envoie vers une page avec tableau listant les chapitres existants
-    //intégration de CRUD
-    //intégration du formulaire par classe
     protected $view = 'Admin/';
     protected $variables;
     protected $template = 'template'; // par défaut

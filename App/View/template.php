@@ -58,6 +58,9 @@
                      <li class="nav-item">
                          <a class="nav-link" href="index.php?p=login">Connexion</a>
                      </li>
+                     <li class="nav-item">
+                         <a class="nav-link" href="index.php?p=loginNew">Nouvel Utilisateur</a>
+                     </li>
                  </div>
             </div>
         </div>

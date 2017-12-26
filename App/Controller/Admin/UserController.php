@@ -44,7 +44,6 @@ class UserController extends \App\Controller\Controller
 
     public function create($data){
         $newChapter = $this->chapter->create($data);
-        var_dump($newChapter);
         $chapters = $this->chapter->getChapters();
         $this->viewAdmin->generate('chapterList', $chapters);
     }

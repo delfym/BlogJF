@@ -3,11 +3,9 @@
 require 'Autoload.php';
 \App\Autoload::register();
 
-//require_once 'Controller/Admin/UserController.php';
 $user = new App\Controller\Admin\UserController();
 $log = new \App\Controller\Admin\Auth();
-//echo '<pre>';
-//var_dump($_POST);
+
 try {
     if (isset($_GET['p'])) {
         if ($_GET['p'] == 'home') {
@@ -39,10 +37,13 @@ try {
        // echo ' indexAdmin 8<br/>';
         $user->home();
     } elseif (isset($_POST['auth'])){
-      //  echo ' indexAdmin 9<br/>';
+        //echo ' indexAdmin 9<br/>';
         $log->setLogin($_POST);
+    } elseif (isset($_POST['newlog'])){
+        //  echo ' indexAdmin 9<br/>';
+        $log->createLogin($_POST);
     } else {
-        echo 'je suis dans home<br/>';
+        //echo 'je suis dans home<br/>';
         $user->home();
     }
 }

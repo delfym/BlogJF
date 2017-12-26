@@ -16,6 +16,9 @@ try {
             $page->chapter(htmlspecialchars($_GET['id']));
         } elseif ($_GET['p'] == 'login') {
             $log->setLogin();
+        } elseif ($_GET['p'] == 'loginNew') {
+            echo ' indexAdmin 35<br/>';
+            $log->login();
         } elseif  ($_GET['p'] == 'chapter'){
             $page->chapter($_GET['id']);
         }elseif  ($_GET['p'] == 'home'){
