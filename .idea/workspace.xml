@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16bc3d73-56dc-4193-adcb-9d39a44362e2" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/App/View/Admin/loginNew.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/App/Controller/Admin/RouterAdmin.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/App/Controller/Router.php" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/App/Controller/Admin/Auth.php" afterPath="$PROJECT_DIR$/App/Controller/Admin/Auth.php" />
-      <change beforePath="$PROJECT_DIR$/App/Controller/Admin/UserController.php" afterPath="$PROJECT_DIR$/App/Controller/Admin/UserController.php" />
-      <change beforePath="$PROJECT_DIR$/App/Model/Admin/Users.php" afterPath="$PROJECT_DIR$/App/Model/Admin/Users.php" />
-      <change beforePath="$PROJECT_DIR$/App/Model/Model.php" afterPath="$PROJECT_DIR$/App/Model/Model.php" />
-      <change beforePath="$PROJECT_DIR$/App/View/Admin/AdminView.php" afterPath="$PROJECT_DIR$/App/View/Admin/AdminView.php" />
-      <change beforePath="$PROJECT_DIR$/App/View/template.php" afterPath="$PROJECT_DIR$/App/View/template.php" />
       <change beforePath="$PROJECT_DIR$/App/index.php" afterPath="$PROJECT_DIR$/App/index.php" />
       <change beforePath="$PROJECT_DIR$/App/indexAdmin.php" afterPath="$PROJECT_DIR$/App/indexAdmin.php" />
     </list>
@@ -34,17 +29,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="indexAdmin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/indexAdmin.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Auth.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="indexAdmin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/indexAdmin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Router.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Controller/Router.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RouterAdmin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Controller/Admin/RouterAdmin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="39" column="20" lean-forward="true" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Auth.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Controller/Admin/Auth.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="213">
@@ -56,7 +81,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App/Controller/Admin/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
@@ -66,6 +91,7 @@
                 <element signature="e#507#656#0#PHP" expanded="false" />
                 <element signature="e#662#918#0#PHP" expanded="false" />
                 <element signature="e#924#1108#0#PHP" expanded="false" />
+                <element signature="e#1114#1316#0#PHP" expanded="false" />
                 <element signature="e#1322#1407#0#PHP" expanded="false" />
               </folding>
             </state>
@@ -99,8 +125,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>var</find>
-      <find>array</find>
       <find>Model</find>
       <find>DbConnect</find>
       <find>db</find>
@@ -129,6 +153,8 @@
       <find>indexAdmin</find>
       <find>$pseudo</find>
       <find>var_dump</find>
+      <find>$user</find>
+      <find>newlog</find>
     </findStrings>
     <replaceStrings>
       <replace>comment</replace>
@@ -145,6 +171,7 @@
       <replace>Model</replace>
       <replace>&lt;br/&gt;</replace>
       <replace>$user</replace>
+      <replace>$this-&gt;user</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -157,13 +184,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Controller/Router.php" />
         <option value="$PROJECT_DIR$/Controller/Session.php" />
         <option value="$PROJECT_DIR$/Controller/ViewController.php" />
         <option value="$PROJECT_DIR$/Model/Chapter.php" />
         <option value="$PROJECT_DIR$/SplClassLoader.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/App/Controller/Router.php" />
         <option value="$PROJECT_DIR$/App/Controller/Session.php" />
         <option value="$PROJECT_DIR$/App/Model/Chapter.php" />
         <option value="$PROJECT_DIR$/App/SplClassLoader.php" />
@@ -202,11 +227,13 @@
         <option value="$PROJECT_DIR$/App/View/Admin/AdminView.php" />
         <option value="$PROJECT_DIR$/App/Controller/Admin/UserController.php" />
         <option value="$PROJECT_DIR$/App/View/template.php" />
-        <option value="$PROJECT_DIR$/App/index.php" />
         <option value="$PROJECT_DIR$/App/View/Admin/loginNew.php" />
         <option value="$PROJECT_DIR$/App/Model/Model.php" />
         <option value="$PROJECT_DIR$/App/Model/Admin/Users.php" />
         <option value="$PROJECT_DIR$/App/Controller/Admin/Auth.php" />
+        <option value="$PROJECT_DIR$/App/index.php" />
+        <option value="$PROJECT_DIR$/App/Controller/Router.php" />
+        <option value="$PROJECT_DIR$/App/Controller/Admin/RouterAdmin.php" />
         <option value="$PROJECT_DIR$/App/indexAdmin.php" />
       </list>
     </option>
@@ -271,25 +298,6 @@
               <item name="blogJF" type="b2602c69:ProjectViewProjectNode" />
               <item name="blogJF" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Model" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="blogJF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blogJF" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Model" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="blogJF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blogJF" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Public" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="blogJF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blogJF" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -319,6 +327,7 @@
       <recent name="$PROJECT_DIR$/App/View/Admin" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/App/Controller/Admin" />
       <recent name="$PROJECT_DIR$/App/View/Admin" />
       <recent name="$PROJECT_DIR$/App/Controller" />
       <recent name="$PROJECT_DIR$/View" />
@@ -363,12 +372,12 @@
       <workItem from="1513177254677" duration="4746000" />
       <workItem from="1513318981655" duration="13675000" />
       <workItem from="1513462245964" duration="6770000" />
-      <workItem from="1513500923051" duration="93812000" />
+      <workItem from="1513500923051" duration="95756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="292080000" />
+    <option name="totallyTimeSpent" value="294024000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="324" y="23" width="1116" height="797" extended-state="0" />
@@ -423,12 +432,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CopieChapterManager.php" />
     <entry file="file://$PROJECT_DIR$/commentsList.php" />
     <entry file="file://$PROJECT_DIR$/anciens fichiers procéduraux/blog_fin_session.php" />
     <entry file="file://$PROJECT_DIR$/View/index.php" />
@@ -443,7 +451,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/anciens fichiers procéduraux/SplClassLoader.php" />
     <entry file="file://$PROJECT_DIR$/home.php" />
-    <entry file="file://$PROJECT_DIR$/App/Controller/Router.php" />
     <entry file="file://$PROJECT_DIR$/App/Controller/Session.php" />
     <entry file="file://$PROJECT_DIR$/App/Controller/ViewController.php" />
     <entry file="file://$PROJECT_DIR$/App/Model/DbAccess.php">
@@ -694,14 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/View/Admin/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -737,6 +736,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controller/Admin/Auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="36" column="63" lean-forward="true" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
+          <folding>
+            <element signature="e#1300#1495#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controller/Router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controller/Admin/RouterAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="39" column="20" lean-forward="true" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/indexAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/App/Controller/Admin/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -746,25 +787,8 @@
             <element signature="e#507#656#0#PHP" expanded="false" />
             <element signature="e#662#918#0#PHP" expanded="false" />
             <element signature="e#924#1108#0#PHP" expanded="false" />
+            <element signature="e#1114#1316#0#PHP" expanded="false" />
             <element signature="e#1322#1407#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/indexAdmin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Controller/Admin/Auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="36" column="63" lean-forward="true" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
-          <folding>
-            <element signature="e#1300#1495#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
