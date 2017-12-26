@@ -15,7 +15,8 @@ class View
 
 
     public function generate($view, $variables = [], $comments=[], $countLines = null){
-        $viewPath1 = dirname(__DIR__ ) . '/' . $this->view . $view;
+        //$viewPath1 = dirname(__DIR__ ) . '/' . $this->view . $view;
+        $viewPath1 = dirname(__DIR__ ) . $this->view . $view;
         ob_start();
         if(!empty($variables)){
             extract($variables);
@@ -29,6 +30,7 @@ class View
             extract($count);
         }
         $content = ob_get_clean();
+        //echo $viewPath1;
         require ($viewPath1 . '.php');
     }
 }

@@ -28,7 +28,6 @@ require_once dirname(__DIR__).'/template.php';
     </div>
 </div>
 
-
 <?php
 if(true == $comments){
 if ($_SESSION['countLines'] <= 1) {

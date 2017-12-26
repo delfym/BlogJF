@@ -21,7 +21,8 @@ abstract class Model
     public function request($request, $parameters = []) {
         if ($parameters == null) {
             $req = $this->db->query($request);
-            return $req->fetchAll(\PDO::FETCH_ASSOC);
+            //var_dump($req);
+            //return $req->fetchAll(\PDO::FETCH_ASSOC);
 
         } elseif ($request !== null && ($parameters != null)) {
             $req = $this->db->prepare($request);
@@ -30,13 +31,26 @@ abstract class Model
             if (($reqType == 'INSERT') || ($reqType == 'UPDATE') || ($reqType == 'DELETE')){
                 return '';
             }
-            $this->count = $req->rowCount();
-            if ($this->count > 1) {
-                return $req->fetchAll(\PDO::FETCH_ASSOC);
-            } else {
-                return $req->fetch(\PDO::FETCH_ASSOC);
-            }
+
         }
+        $this->count = $req->rowCount();
+        if ($this->count > 1) {
+            return $req->fetchAll(\PDO::FETCH_ASSOC);
+        } else {
+            return $req->fetch(\PDO::FETCH_ASSOC);
+        }
+    }
+
+    private function reqCount($req){
+        echo '<br/>';
+        var_dump($req);
+        $this->count = $req->rowCount();
+        if ($this->count > 1) {
+            return $req->fetchAll(\PDO::FETCH_ASSOC);
+        } else {
+            return $req->fetch(\PDO::FETCH_ASSOC);
+        }
+
     }
 
     public function getCount() {

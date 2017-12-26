@@ -6,6 +6,7 @@ require 'Autoload.php';
 
 $page = new App\Controller\ChapterController();
 $user = new App\Controller\Admin\UserController();
+$log = new \App\Controller\Admin\Auth();
 
 try {
     if (isset($_GET['p'])){
@@ -14,7 +15,7 @@ try {
         } elseif (isset($_GET) && !empty($_GET['id'])) {
             $page->chapter(htmlspecialchars($_GET['id']));
         } elseif ($_GET['p'] == 'login') {
-            $user->setLogin();
+            $log->setLogin();
         } elseif  ($_GET['p'] == 'chapter'){
             $page->chapter($_GET['id']);
         }elseif  ($_GET['p'] == 'home'){
