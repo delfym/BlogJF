@@ -34,6 +34,9 @@ try {
     } elseif (isset($_POST['create'])){
         echo ' indexAdmin 7<br/>';
         $user->create($_POST);
+    } elseif (isset($_POST['cancel'])){
+        echo ' indexAdmin 7<br/>';
+        $user->home();
     } else {
         echo 'je suis dans home<br/>';
         $user->home();

@@ -13,8 +13,8 @@
             </div>
             <br/>
             <div class="row justify-content-around col-md-3">
-                <button class="" name="create" href="indexAdmin.php?p=create" type="submit">Valider</button>
-                <button class="mce-btn-group" name="cancel"  href="?p=home" type="reset">Annuler</button>
+                <button class="btn-group btn-primary" name="create" href="" type="submit">Valider</button>
+                <button class="btn-primary btn-primary" name="cancel"  href="" type="reset">Annuler</button>
             </div>
         </div>
     </div>

@@ -7,7 +7,7 @@ require_once dirname(__DIR__).'/template.php';
     <div class="col-md-12">
         <div class ="frame2">
             <h5 id = title ><?= $variables['title'] ?></h5>
-            <article id = "content" ><?= $variables['content'] ?><br/><br/></article>
+            <article id = "content" ><?= htmlspecialchars_decode($variables['content']) ?></article>
         </div>
     </div>
 </div>
@@ -48,7 +48,7 @@ if ($_SESSION['countLines'] <= 1) {
         <a href="../../index.php?p=chapter&id=<?= $_GET['id'] ?>">
             <h5 id=author><?= $comment['author'] ?> le <?= $comment['commentsDate'] ?></h5>
         </a>
-        <article id="comment" class=""><?= $comment['comment'] ?><br/><br/></article>
+        <article id="comment" class=""><?= htmlspecialchars_decode($comment['comment']) ?><br/><br/></article>
     </div>
 <?php
     endforeach; }}?>

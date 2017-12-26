@@ -9,18 +9,18 @@
     <script src="Public/tinymce/js/tinymce/tinymce.min.js"></script>
     <script>tinymce.init({
             selector:'textarea',
+            mode: 'textareas',
             branding: false,
-            forced_root_block : false,
-            force_br_newlines :true,
-            force_p_newlines : false,
+            preview_styles: true,
             menu: {
                 edit: {title: 'Edit', items: 'undo redo | cut copy paste pastetext | selectall'},
                 insert: {title: 'Insert', items: 'link media | template hr'},
                 view: {title: 'View', items: 'visualaid'},
-                format: {title: 'Format', items: 'bold italic underline strikethrough superscript subscript | formats | removeformat'},
+                format: {title: 'Format', items: 'bold italic underline strikethrough | formats | removeformat'},
                 table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'},
                 tools: {title: 'Tools', items: 'spellchecker code'}
-            }
+            },
+            setup: function (editor) { editor.on('change', function () { editor.save(); }); }
     });
     </script>
 </head>
