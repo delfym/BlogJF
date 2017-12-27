@@ -7,15 +7,15 @@
 
                 <input type="hidden" name="id" value="<?= $variables['id'] ?>">
                 <input type="hidden" name="title" value="<?= $variables['title'] ?>">
-                <label id = title ><?= $variables['title'] ?></label>
+                <h4 id = title ><?= $variables['title'] ?> - <?= $variables['chapterName'] ?></h4>
 
                 <textarea class="form-control" rows="10" name="content"><?= $variables['content'] ?></textarea>
 
-                <div class="row justify-content-around col-md-3">
+                <span class="row ">
                 <button class="btn btn-group btn-primary" name="update" href=" type="submit">Modifier</button>
                 <button class="btn btn-group btn-primary" name="delete"  href="" type="submit">Supprimer</button>
                 <button class="btn btn-group btn-primary" name="cancel"  type="submit">Annuler</button>
-                </div>
+                </span>
         </div>
     </div>
 

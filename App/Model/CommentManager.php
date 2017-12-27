@@ -10,24 +10,25 @@ namespace App\Model;
 class CommentManager extends Model {
 
     public function getComment($id){
-        // On récupère tout le contenu de la table commentaires pour ce billet
-        $reply = $this->db->getPDO()->prepare('SELECT id, author, comment, DATE_FORMAT(commentDate, \'%d/%m/%Y à %Hh%imin%ss\') AS commentDate, chapterId FROM comments WHERE chapterId = ? ORDER BY commentDate DESC');
-        $reply->execute(array($id));
-        return $reply->fetch();
+        return $this->request('SELECT id, author, comment, DATE_FORMAT(commentDate, \'%d/%m/%Y à %Hh%imin%ss\') AS commentDate, chapterId FROM comments WHERE chapterId = ? ORDER BY commentDate DESC', [$id],
+            array(
+                'author' => htmlspecialchars($_POST['author']),
+                'comment' => htmlspecialchars($_POST['comment']),
+                'chapterId' => htmlspecialchars($_POST['chapterId'])
+            ));
+
     }
 
     public function getComments($chapterId) {
-        $req = $this->request('SELECT id, author, comment, DATE_FORMAT(commentDate, \' %d/%m/%Y à %Hh %imin %ss\') AS commentsDate, chapterId FROM comments WHERE chapterId = ? ORDER BY commentDate DESC', [$chapterId]);
-        return $req;
+        return $this->request('SELECT id, author, comment, DATE_FORMAT(commentDate, \' %d/%m/%Y à %Hh %imin %ss\') AS commentsDate, chapterId FROM comments WHERE chapterId = ? ORDER BY commentDate DESC', [$chapterId]);
     }
 
     public function addComment($parameters=[]) {
-        $res = $this->request('INSERT INTO comments (author, comment, commentDate, chapterId) VALUES (:author, :comment, NOW(), :chapterId)',
+        return $this->request('INSERT INTO comments (author, comment, commentDate, chapterId) VALUES (:author, :comment, NOW(), :chapterId)',
         array(
             'author' => htmlspecialchars($_POST['author']),
             'comment' => htmlspecialchars($_POST['comment']),
             'chapterId' => htmlspecialchars($_POST['chapterId'])));
-            return $res;
     }
 
 }

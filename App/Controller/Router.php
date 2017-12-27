@@ -18,7 +18,7 @@ class Router
     public function __construct()
     {
         $this->page = new ChapterController();
-        $this->user = new Admin\UserController();
+        $this->user = new Admin\AdminController();
         $this->auth = new Admin\Auth();
     }
 

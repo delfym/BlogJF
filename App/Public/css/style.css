@@ -76,6 +76,23 @@ h5 {
 	text-align: center;
 }
 
+
+h4 {
+	color: black;
+	font-weight: bold;
+	font-size: 18px;
+	margin: 2px;
+	text-align: center;
+}
+
+#title{
+	font-weight: bold;
+}
+
+button{
+	margin: 5px 5px 5px 15px;
+}
+
 article {
 	border: solid 1px;
 	border-bottom-right-radius: 4px;

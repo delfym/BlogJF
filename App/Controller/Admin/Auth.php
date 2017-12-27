@@ -8,7 +8,7 @@
 
 namespace App\Controller\Admin;
 
-class Auth extends UserController
+class Auth extends AdminController
 {
     private $user;
     private $password;
@@ -19,8 +19,6 @@ class Auth extends UserController
  */
     private function loginAuth(){
         $this->login = $this->users->getUser();
-        //var_dump($this->login);
-        //var_dump($this->password);
         $passHashed = password_verify($this->password, $this->login['password']);
         if (($this->login['username'] !== $this->user) && ( false == $passHashed)) {
             return false;

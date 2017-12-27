@@ -9,7 +9,7 @@ namespace App\Controller\Admin;
 
 use App\Model\Admin\Users;
 
-class UserController extends \App\Controller\Controller
+class AdminController extends \App\Controller\Controller
 {
     protected $users;
 

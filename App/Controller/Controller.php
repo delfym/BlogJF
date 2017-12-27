@@ -25,6 +25,4 @@ abstract class Controller {
         $this->view = new \App\View\View();
         $this->viewAdmin = new \App\View\Admin\AdminView();
     }
-   // public function request()
-
 }

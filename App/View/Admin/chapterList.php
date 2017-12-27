@@ -8,20 +8,19 @@
     <form method="post" action="indexAdmin.php">
         <select class="list-group" name="chapterSelected">
             <?php foreach ($variables as $chapter) : ?>
-                <option name="id" value="<?= $chapter['id'] ?>"><?= $chapter['title'] ?></option>
+                <option name="id" value="<?= $chapter['id'] ?>"><?= $chapter['title'] ?> - <?= $chapter['chapterName'] ?></option>
             <?php endforeach; ?>
         </select>
         <br/>
-        <div class="row justify-content-around col-md-4">
+        <span class="row">
             <button class="btn btn-group btn-primary" name="chapter" href="indexAdmin.php?p=chapter" type="submit">Choisir</button>
-            <br/>
-        </div>
+            &nbsp;
+        <a class="btn btn-group btn-primary " name="new" href="indexAdmin.php?p=chapterNew">Ajouter un nouveau chapitre</a>
+        </span>
 
     </form>
 
-    <br/>
-    <a class="btn btn-group btn-primary " name="new" href="indexAdmin.php?p=chapterNew">Ajouter un nouveau chapitre</a>
-    <br/>
+
 </div>
 <br/><br/>
 

@@ -11,7 +11,7 @@ class AdminView  {
     public function generate($view, $variables = []){
 
         $viewPath = dirname(__DIR__ ) . '/' . $this->view . $view;
-        ob_start();
+         ob_start();
         if(!empty($variables)){
             extract($variables);
         }

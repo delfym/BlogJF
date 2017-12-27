@@ -6,7 +6,7 @@ require_once dirname(__DIR__).'/template.php';
 <div class="row">
     <div class="col-md-12">
         <div class ="frame2">
-            <h5 id = title ><?= $variables['title'] ?></h5>
+            <h5 id = title ><?= $variables['title'] ?> - <?= $variables['chapterName'] ?></h5>
             <article id = "content" ><?= htmlspecialchars_decode($variables['content']) ?></article>
         </div>
     </div>
