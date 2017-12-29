@@ -41,7 +41,8 @@ class Auth extends AdminController
             $this->pass = ($logs['password']);
             $chapters = $this->chapter->getChapters();
             if (false == $this->loginAuth()) {
-                $this->viewAdmin->generate('login');
+                $_SESSION['error'] = "identifiants incorrects";
+                $this->viewAdmin->generate('login', [$_SESSION['error']]); //ajouter un parametre message d'erreur
             } else {
                 $this->viewAdmin->generate('chapterList', $chapters);
             }
