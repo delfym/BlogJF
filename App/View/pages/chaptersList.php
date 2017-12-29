@@ -7,7 +7,7 @@
             <h5 id = title ><?= $chapter['title'] ?> - <?= $chapter['chapterName'] ?></h5>
         </a>
         <article id = "content" ><?= htmlspecialchars_decode(substr($chapter['content'], 0, 500 ))?>
-            <a href="index.php?p=chapter&id= <?= $chapter['id'] ?> ">(...)</a>
+            <a href="index.php?p=chapter&id= <?= $chapter['id'] ?> "> (...)</a>
             <br/><br/>
         </article>
     </div>

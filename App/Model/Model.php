@@ -21,7 +21,7 @@ abstract class Model
     public function request($request, $parameters = []) {
         if ($parameters == null) {
             $req = $this->db->query($request);
-           // echo '<br/> je suis ds le query<br/>';
+//echo '<br/> je suis ds le query<br/>';
         } elseif ($request !== null && ($parameters != null)) {
             $req = $this->db->prepare($request);
             $reqType = substr($request, 0, 6 );
@@ -33,10 +33,10 @@ abstract class Model
         $this->count = $req->rowCount();
  //   var_dump($this->count);
         if ($this->count > 1) {
-           // echo 'Model fetch ALL';
+//echo 'Model fetch ALL';
             return $req->fetchAll(\PDO::FETCH_ASSOC);
         } else {
-   //         echo 'Model fetch seul';
+//echo 'Model fetch seul';
             return $req->fetch(\PDO::FETCH_ASSOC);
         }
     }

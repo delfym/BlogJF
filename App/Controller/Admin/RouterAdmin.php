@@ -25,6 +25,8 @@ class RouterAdmin extends \App\Controller\Router
                 }
             } elseif (isset($_POST['chapter'])) {
                 $this->user->chapter($_POST['chapterSelected']);
+            } elseif (isset($_POST['reportSelected'])) {
+                $this->user->home($_POST['reportSelected']);
             } elseif (isset($_POST['update'])){
                 $this->user->update($_POST);
             } elseif (isset($_POST['delete'])){

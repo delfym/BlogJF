@@ -18,7 +18,7 @@ class AdminController extends \App\Controller\Controller
         $this->users = new Users();
     }
 
-    public function home() {
+    public function home($data=[]) {
         $chapters = $this->chapter->getChapters();
         $this->viewAdmin->generate('chapterList',$chapters);
     }

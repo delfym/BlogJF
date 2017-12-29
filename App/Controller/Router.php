@@ -37,6 +37,8 @@ class Router
                     $this->page->chapter($_GET['id']);
                 }elseif  ($_GET['p'] == 'home'){
                     $this->page->home();
+                }elseif  ($_GET['p'] == 'report'){
+                    $this->user->home();
                 }
             } else {
                 $this->page->home();

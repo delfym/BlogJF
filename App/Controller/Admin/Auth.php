@@ -11,29 +11,34 @@ namespace App\Controller\Admin;
 class Auth extends AdminController
 {
     private $user;
-    private $password;
+    private $pass;
     private $login=[];
 
 /*
  * Vérifie et compare id de la bdd
  */
-    private function loginAuth(){
-        $this->login = $this->users->getUser();
-        $passHashed = password_verify($this->password, $this->login['password']);
-        if (($this->login['username'] !== $this->user) && ( false == $passHashed)) {
-            return false;
-        } else {
-            return true;
+    private function loginAuth() {
+        $this->login = $this->users->getUsers();
+        $i = 0;
+
+        foreach ($this->login as $logs) {
+            $passHashed = password_verify($this->pass, $logs['password']);
+            if (($logs['username'] == $this->user) && ($passHashed == true)) {
+                return true;
+            } else {
+                $i++;
+            }
         }
     }
 
     /*
  * récupère et contrôle les logins envoyés ds form
  */
-    public function setLogin($login=[]) {
-        if (!empty($login)) {
-            $this->user = htmlspecialchars($login['username']);
-            $this->password = htmlspecialchars($login['password']);
+    public function setLogin($logs=[]) {
+        if (!empty($logs)) {
+            $this->user = htmlspecialchars($logs['username']);
+            //$_SESSION ['username'] = $this->user;
+            $this->pass = ($logs['password']);
             $chapters = $this->chapter->getChapters();
             if (false == $this->loginAuth()) {
                 $this->viewAdmin->generate('login');
@@ -54,6 +59,4 @@ class Auth extends AdminController
     public function login(){
         $this->viewAdmin->generate('loginNew');
     }
-
-
 }

@@ -14,8 +14,8 @@ class Users extends \App\Model\Model {
     private $password;
 
     public function addUser($login){
-        $pass = htmlspecialchars($login['password']);
-        $passHash = password_hash($pass, PASSWORD_DEFAULT);
+      //  $pass = htmlspecialchars($login['password']);
+        $passHash = password_hash($login['password'], PASSWORD_DEFAULT);
         $this->request('INSERT INTO login(username, password) VALUES (:username, :password)',
         (array(
             'username' => htmlspecialchars($login['username']),
@@ -23,9 +23,13 @@ class Users extends \App\Model\Model {
         )));
     }
 
-    public function getUser(){
+    public function getUser($id){
     //    return $this->request('SELECT * FROM login');
-       return $this->request('SELECT * FROM login');
+       return $this->request('SELECT * FROM login WHERE id = ?', [$id]);
+    }
+
+    public function getUsers(){
+        return $this->request('SELECT * FROM login');
     }
 
 }
