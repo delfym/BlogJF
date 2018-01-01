@@ -1,8 +1,59 @@
 body, html {
 	padding: 0;
 	margin: 0;
+
 }
 
-.page {
-	background-color: #795548;
+#page {
+	/*background-color: ##9E9E9E;*/
+	background-color: #9E9E9E;
+	color: #795548;
+}
+
+h1, .nav-link {
+	color: #95a5a6;
+}
+
+.container-fluid {
+	padding: 0;
+	background-color: #B71C1C;
+}
+
+#modal {
+	border: #d35400 solid 4px;
+	background-color: #d35400;
+	text-align: center;
+
+	padding-top: 50px;
+	top: 100;
+	left: 5px;
+}
+
+#modal-button{
+	background-color: #c0392b;
+	color: white;
+}
+
+.form-group {
+	background-color: #bdc3c7;
+	border: #bdc3c7;
+}
+
+.frame {
+	border-top : 1px solid white;
+	padding: 14px;
+
+}
+
+.frame2 {
+	border-bottom : 1px solid white;
+	padding: 14px;
+}
+
+.modal {
+	background-color: #e67e22;
+}
+
+div.mce-edit-area {
+	background-color:#795548;
 }

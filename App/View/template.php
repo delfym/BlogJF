@@ -5,10 +5,12 @@
 	<meta charset="utf-8">
 	<title>Blog de JF</title>
     <link rel="stylesheet" type="text/css" href="Public/Bootstrap/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="Public/css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="Public/css/styleNew.css">
+    <!--link rel="stylesheet" type="text/css" href="Public/css/style.css"-->
     <script src="Public/tinymce/js/tinymce/tinymce.min.js"></script>
     <script>tinymce.init({
-            selector:'textarea',
+            selector:"textarea",
             mode: 'textareas',
             branding: false,
             preview_styles: true,
@@ -27,9 +29,9 @@
 
 </head>
 
-<body class="container-fluid mr-0">
+<body id="page" class="container-fluid mr-0">
 
-    <header class="container-fluid mr-0">
+    <header id="banniere" class="container-fluid mr-0">
         <div class="row">
             <div class="row">
                 <div class="col-md">

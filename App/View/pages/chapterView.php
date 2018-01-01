@@ -10,8 +10,9 @@ require_once dirname(__DIR__) . '/template.php';
         </div>
     </div>
 </div>
+
 <div class="">
-    <div class="">
+    <div id="form">
         <form class="form-group" action="../../blogJF/App/index.php?p=post&id=<?= $_GET['id'] ?>" method="post">
             <div class="form-group">
                 <label class="control-label">Pseudo : </label>
@@ -28,8 +29,8 @@ require_once dirname(__DIR__) . '/template.php';
     </div>
 </div>
 
-<?php
 
+<?php
 if (true == $comments){
 if ($_SESSION['countLines'] <= 1) {
 ?>
@@ -46,11 +47,25 @@ if ($_SESSION['countLines'] <= 1) {
             <div class="frame">
                 <h5 id=author><?= $comment['author'] ?> le <?= $comment['commentsDate'] ?></h5>
                 <article id="comment" class=""><?= htmlspecialchars_decode($comment['comment']) ?><br/><br/></article>
-                <a onclick="popupCenter('View/pages/popupReport.php', 300,150,'menubar=no,status=no')">signaler un
-                    commentaire</a>
+                <button onclick="openModal()">signaler un commentaire</button>
             </div>
         <?php
         endforeach;
     }
     } ?>
+</div>
+
+
+<div id="modal" class="invisible">
+    <h5 id = report >Signaler un commentaire</h5>
+    <form name = "reportSelected" class="" method="post" action="#">
+        <label >Sélectionner un motif de signalement :
+            <select id= "reportSelected" name = "reportSelected" class="list-group-item-action">
+                <option value="report1">infondé</option>
+                <option value="report2">insulte / non constructif</option>
+            </select>
+        </label>
+        <button id="modal-button" class="form-group" type="submit" name="report" onclick="">Valider</button>
+        <button id="modal-button" class="form-group" type="reset" name="report" onclick="closeModal()">Annuler</button>
+    </form>
 </div>
