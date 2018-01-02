@@ -31,4 +31,12 @@ class CommentManager extends Model {
             'chapterId' => htmlspecialchars($_POST['chapterId'])));
     }
 
+    public function addReport($id){
+        $this->request('INSERT INTO comments (reported, report) VALUES (:reported, :report) WHERE chapterId='.[$id],
+            array(
+                'reported' => htmlspecialchars($_POST['author']),
+                'report' => htmlspecialchars($_POST['comment']),
+                ));
+    }
+
 }

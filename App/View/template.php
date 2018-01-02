@@ -40,24 +40,16 @@
             </div>
             <div class="row justify-content-center align-items-center col-md">
                 <!--div class="col-md"-->
-                <a class="align-self-center text-center col-md-12" href="index.php" >
+                <a class="align-self-center text-center col-md-12" id="blogTitle" href="index.php" >
                 <h1 class="">Le blog de Jean Forteroche</h1>
+                    <h2>Billet simple pour l'Alaska</h2>
                 </a>
                  <div class="nav align-self-end justify-content-center col-md-12">
                     <li class="nav-item">
                         <a class="nav-link" href="index.php">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?p=chapter&id=1">Chapitre 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?p=chapter&id=2">Chapitre 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?p=chapter&id=7">Chapitre 3</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?p=chapter&id=4">Chapitre 4</a>
+                        <a class="nav-link" href="index.php?p=list">Liste des chapitres</a>
                     </li>
                      <li class="nav-item">
                          <a class="nav-link" href="index.php?p=login">Connexion</a>

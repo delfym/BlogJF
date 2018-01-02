@@ -7,8 +7,12 @@ use App\Model\CommentManager;
 class ChapterController extends Controller {
 
     public function home() {
-            $chapters = $this->chapter->getChapters();
-            $this->view->generate('chaptersList', $chapters);
+            $this->view->generate('home');
+    }
+
+    public function listChapters() {
+        $chapters = $this->chapter->getChapters();
+        $this->view->generate('chaptersList', $chapters);
     }
 
     public function chapter($id) {

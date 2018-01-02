@@ -5,27 +5,62 @@ body, html {
 }
 
 #page {
-	/*background-color: ##9E9E9E;*/
 	background-color: #9E9E9E;
 	color: #795548;
 }
 
-h1, .nav-link {
+h1, h2, .nav-link {
 	color: #95a5a6;
+}
+
+a, h1, h2 {
+	text-decoration : none !important;
+}
+
+a :hover, .nav-item :hover {
+	color: #e64a19 !important;
+}
+
+#points :hover, #points {
+	color: #795548 !important;
+}
+
+#title{
+	color: #ac0800;
+}
+
+#titleHome{
+	margin-top: 15px;
+	padding: 30px;
+}
+
+#login{
+	margin-top: 100px;
+}
+
+#bio{
+	padding: 20px;
 }
 
 .container-fluid {
 	padding: 0;
-	background-color: #B71C1C;
+	background-color: #ac0800;
+}
+
+button, .btn {
+	background-color: #795548;
+	color: #9E9E9E;
+	border: #9E9E9E;
+/*	padding: 4px;
+	height: 30px;
+	vertical-align: center; */
 }
 
 #modal {
 	border: #d35400 solid 4px;
 	background-color: #d35400;
 	text-align: center;
-
-	padding-top: 50px;
-	top: 100;
+	margin-top: 3em;
 	left: 5px;
 }
 
@@ -57,3 +92,4 @@ h1, .nav-link {
 div.mce-edit-area {
 	background-color:#795548;
 }
+

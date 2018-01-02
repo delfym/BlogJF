@@ -25,8 +25,6 @@ class Auth extends AdminController
             $passHashed = password_verify($this->pass, $logs['password']);
             if (($logs['username'] == $this->user) && ($passHashed == true)) {
                 return true;
-            } else {
-                $i++;
             }
         }
     }
@@ -60,4 +58,5 @@ class Auth extends AdminController
     public function login(){
         $this->viewAdmin->generate('loginNew');
     }
+
 }

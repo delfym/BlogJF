@@ -29,7 +29,6 @@ require_once dirname(__DIR__) . '/template.php';
     </div>
 </div>
 
-
 <?php
 if (true == $comments){
 if ($_SESSION['countLines'] <= 1) {
@@ -37,32 +36,32 @@ if ($_SESSION['countLines'] <= 1) {
 <div class="">
     <div class="">
         <h5 id=author><?= $comments['author'] ?> le <?= $comments['commentDate'] ?></h5>
-
         <article id="comment" class=""><?= $comments['comment'] ?><br/><br/></article>
     </div>
-    <?php
+<?php
     } else {
         foreach ($comments as $comment) :
             ?>
             <div class="frame">
                 <h5 id=author><?= $comment['author'] ?> le <?= $comment['commentsDate'] ?></h5>
                 <article id="comment" class=""><?= htmlspecialchars_decode($comment['comment']) ?><br/><br/></article>
-                <button onclick="openModal()">signaler un commentaire</button>
+                <button type="submit" onclick="openModal()">signaler un commentaire</button>
             </div>
         <?php
         endforeach;
     }
-    } ?>
+} ?>
 </div>
-
-
 <div id="modal" class="invisible">
     <h5 id = report >Signaler un commentaire</h5>
+    <br/>
     <form name = "reportSelected" class="" method="post" action="#">
+        <input type="hidden" value="<?= $comment['comment'] ?>"/>
         <label >Sélectionner un motif de signalement :
             <select id= "reportSelected" name = "reportSelected" class="list-group-item-action">
-                <option value="report1">infondé</option>
-                <option value="report2">insulte / non constructif</option>
+                <option value="report1"></option>
+                <option value="report2">insulte</option>
+                <option value="report3">inutile</option>
             </select>
         </label>
         <button id="modal-button" class="form-group" type="submit" name="report" onclick="">Valider</button>

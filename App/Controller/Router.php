@@ -35,11 +35,11 @@ class Router
                     $this->auth->login();
                 } elseif  ($_GET['p'] == 'chapter'){
                     $this->page->chapter($_GET['id']);
-                }elseif  ($_GET['p'] == 'home'){
-                    $this->page->home();
-                }elseif  ($_GET['p'] == 'report'){
+                } elseif  ($_GET['p'] == 'list'){
+                    $this->page->listChapters();
+                } /*elseif  ($_GET['p'] == 'report'){
                     $this->user->home();
-                }
+                }*/
             } else {
                 $this->page->home();
             }

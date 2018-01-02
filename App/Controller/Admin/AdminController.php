@@ -51,4 +51,5 @@ class AdminController extends \App\Controller\Controller
     public function chapterNew(){
         $this->viewAdmin->generate('chapterNew');
     }
+
 }
