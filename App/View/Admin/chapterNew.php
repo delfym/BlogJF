@@ -9,7 +9,7 @@
                  Titre du chapitre :  <input type="text" name="chapterName"/>
                 </p>
                 <label id="title" class="flex-column">Texte à saisir :
-                    <textarea class="form-control col-lg-12" rows="10" name="content"></textarea>
+                    <textarea id="textAdmin" class="form-control col-lg-12" rows="10" name="txtAdmin"></textarea>
                 </label>
             </div>
             <br/>

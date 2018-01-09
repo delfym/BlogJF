@@ -11,11 +11,13 @@ class View
 {
     protected $view = '/View/pages/';
     protected $variables;
+    protected $reports;
     protected $template = 'template'; // par défaut
 
 
     public function generate($view, $variables = [], $comments=[], $countLines = null){
         //$viewPath1 = dirname(__DIR__ ) . '/' . $this->view . $view;
+        //var_dump($reports);
         $viewPath1 = dirname(__DIR__ ) . $this->view . $view;
         ob_start();
         if(!empty($variables)){
@@ -25,6 +27,7 @@ class View
         if (isset($comments) && (true == $comments)) {
             extract($comments);
         }
+
         if (isset($countLines)){
             $count [0] = $countLines;
             extract($count);

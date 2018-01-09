@@ -12,9 +12,9 @@ class ChapterManager extends Model {
     public function create($data){
         $this->request('INSERT INTO chapter(title, chapterName, content, creationDate) VALUES (:title, :chapterName, :content, NOW())',
         (array(
-            'title' => 'Chapitre ' . htmlspecialchars($data ['title']),
+            'title' => 'CHAPITRE ' . htmlspecialchars($data ['title']),
             'chapterName' => htmlspecialchars($data['chapterName']),
-            'content' => htmlspecialchars($data['content'])
+            'content' => htmlspecialchars($data['textAdmin'])
         )));
     }
 
@@ -23,7 +23,7 @@ class ChapterManager extends Model {
             array(
             'title' => htmlspecialchars($data['title']),
             'chapterName' => htmlspecialchars(($data['chapterName'])),
-            'content'=> htmlspecialchars($data['content']))
+            'content'=> htmlspecialchars($data['textAdmin']))
         );
     }
 
@@ -32,7 +32,7 @@ class ChapterManager extends Model {
     }
 
     public function getChapters() {
-        return $this->request('SELECT id, title, chapterName, content, DATE_FORMAT(creationDate, \'%d/%m/%Y\') AS chapterDate FROM chapter ORDER BY id LIMIT 0,10' );
+        return $this->request('SELECT id, title, chapterName, content, DATE_FORMAT(creationDate, \'%d/%m/%Y\') AS chapterDate FROM chapter ORDER BY id' );
     }
 
     public function getChapter($id) {

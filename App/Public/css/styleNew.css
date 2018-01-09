@@ -4,9 +4,24 @@ body, html {
 
 }
 
+.container-fluid {
+    padding: 0;
+    background-color: #ac0800;
+}
+
 #page {
 	background-color: #9E9E9E;
 	color: #795548;
+}
+
+#commentInp {
+    background-color: #9E9E9E;
+    color: #795548;
+    border: #9E9E9E;
+}
+
+h4 {
+    color: #795548;
 }
 
 h1, h2, .nav-link {
@@ -18,11 +33,12 @@ a, h1, h2 {
 }
 
 a :hover, .nav-item :hover {
-	color: #e64a19 !important;
+	color: #e64a19 ;
 }
 
 #points :hover, #points {
 	color: #795548 !important;
+	text-decoration-line:none;
 }
 
 #title{
@@ -42,29 +58,25 @@ a :hover, .nav-item :hover {
 	padding: 20px;
 }
 
-.container-fluid {
-	padding: 0;
-	background-color: #ac0800;
-}
 
-button, .btn {
+button, .btn-group, .btn {
 	background-color: #795548;
 	color: #9E9E9E;
 	border: #9E9E9E;
-/*	padding: 4px;
-	height: 30px;
-	vertical-align: center; */
+	margin: 8px;
 }
 
-#modal {
+#modalBox {
 	border: #d35400 solid 4px;
 	background-color: #d35400;
 	text-align: center;
 	margin-top: 3em;
-	left: 5px;
+    height: 350px;
+    width: 400px;
+    left : 5px;
 }
 
-#modal-button{
+#modal-button {
 	background-color: #c0392b;
 	color: white;
 }
@@ -72,12 +84,21 @@ button, .btn {
 .form-group {
 	background-color: #bdc3c7;
 	border: #bdc3c7;
+	border-radius: 4px;
+}
+
+caption {
+    caption-side: top;
+}
+
+input #commentInp {
+    height: auto;
+    width: auto;
 }
 
 .frame {
 	border-top : 1px solid white;
 	padding: 14px;
-
 }
 
 .frame2 {
@@ -92,4 +113,3 @@ button, .btn {
 div.mce-edit-area {
 	background-color:#795548;
 }
-

@@ -20,7 +20,8 @@ class AdminController extends \App\Controller\Controller
 
     public function home($data=[]) {
         $chapters = $this->chapter->getChapters();
-        $this->viewAdmin->generate('chapterList',$chapters);
+        $reports = $this->comment->getReports();
+        $this->viewAdmin->generate('chapterList',$chapters,$reports);
     }
 
     public function chapter($id) {
@@ -50,6 +51,31 @@ class AdminController extends \App\Controller\Controller
 
     public function chapterNew(){
         $this->viewAdmin->generate('chapterNew');
+    }
+
+    public function report($parameters){
+        if (!isset($parameters)){
+            header('Location: index.php?p=chapter&id='.$_GET['id']);
+            exit();
+        } else {
+            //echo '<pre>';
+            //var_dump($parameters);
+            $id = htmlspecialchars($_GET['id']);
+            $this->comment->addReport($parameters);
+            header('Location: index.php?p=chapter&id='.$id);
+            exit();
+        }
+    }
+
+    public function deleteReport($id){  //supprimer le commentaire + le report
+        $this->comment->deleteReport($id);
+        $this->home();
+    }
+
+    public function deleteComment($id){  //supprimer le commentaire + le report
+        $this->comment->deleteComment($id);
+        $this->comment->deleteReport($id);
+        $this->home();
     }
 
 }

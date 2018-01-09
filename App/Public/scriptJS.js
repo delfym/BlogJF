@@ -1,16 +1,30 @@
 
-function openModal() {
-    document.getElementById('modal').className ="visible";
-    document.getElementById('form').className = "invisible";
-    document.getElementById('form').style.display = "none";
-    document.getElementById('modal').style.position = "absolute";
-    document.getElementById('modal').style.top = "300px";
-    document.getElementById('modal').style.margin = "30px";
-}
+/*
+$(console.log("input#inpCom".attr("value")));
+*/
+        console.log(document.getElementById('inpCom').getAttribute("value"));
 
-function closeModal() {
-    document.getElementById('modal').className = "invisible";
-    document.getElementById('form').className = "visible";
-    document.getElementById('form').style.display = "";
 
-}
+/*
+
+$("#contentOne").on('show.bs.modal', function (e) {
+    var idReport = $(e.relatedTarget).data('idReport');
+
+    $(e.currentTarget).find('input[name="idReport"]').val(idReport);
+});
+
+
+$(function(){
+    $("#inpCom").submit(function(e) {
+        var $form = $(this);
+        $.post($form.attr("value"), $form.serialize())
+            .done(function(data) {
+                $("#inpCom").html(data);
+            })
+            .fail(function() {
+                alert("Oups, un problème...");
+            });
+    });
+});
+*/
+

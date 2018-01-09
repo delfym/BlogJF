@@ -42,7 +42,8 @@ class Auth extends AdminController
                 $_SESSION['error'] = "identifiants incorrects";
                 $this->viewAdmin->generate('login', [$_SESSION['error']]); //ajouter un parametre message d'erreur
             } else {
-                $this->viewAdmin->generate('chapterList', $chapters);
+                $reports = $this->comment->getReports();
+                $this->viewAdmin->generate('chapterList', $chapters,$reports);
             }
         } else {
             $this->viewAdmin->generate('login');
@@ -50,9 +51,14 @@ class Auth extends AdminController
     }
 
     public function createLogin($login) {
-        $this->users->addUser($login);
-        $chapters = $this->chapter->getChapters();
-        $this->viewAdmin->generate('chapterList', $chapters);
+        if(!is_null($login)){
+            $this->users->addUser($login);
+            $chapters = $this->chapter->getChapters();
+            $this->viewAdmin->generate('chapterList', $chapters);
+        }
+        else {
+            $this->viewAdmin->generate('login', [$_SESSION['error']]);
+        }
     }
 
     public function login(){

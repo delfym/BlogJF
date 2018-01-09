@@ -1,70 +1,75 @@
 <?php
 require_once dirname(__DIR__) . '/template.php';
 ?>
+<div class="container col-lg-8 text-justify">
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="frame2">
-            <h5 id=title><?= $variables['title'] ?> - <?= $variables['chapterName'] ?></h5>
-            <article id="content"><?= htmlspecialchars_decode($variables['content']) ?></article>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="frame2">
+                <h5 id=title class="text-lg-center"><?= $variables['title'] ?> - <?= $variables['chapterName'] ?></h5>
+                <article id="content"><?= htmlspecialchars_decode($variables['content']) ?></article>
+            </div>
         </div>
     </div>
-</div>
-
-<div class="">
-    <div id="form">
-        <form class="form-group" action="../../blogJF/App/index.php?p=post&id=<?= $_GET['id'] ?>" method="post">
-            <div class="form-group">
-                <label class="control-label">Pseudo : </label>
-                <input type="text" name="author" class="form-control" value=" "/>
-            </div>
-            <input class="form-inline" type="hidden" name="chapterId" value="<?= $_GET['id'] ?>">
-            <div class="form-group">
-                <label class="control-label" for="comment">Mon message : </label>
-                <textarea class="form-control" name="comment" rows="5" cols=""></textarea>
-            </div>
-            <button class="pull-right btn btn-default" type="submit">Envoyer</button>
-            <br/>
-        </form>
-    </div>
-</div>
-
-<?php
-if (true == $comments){
-if ($_SESSION['countLines'] <= 1) {
-?>
-<div class="">
+    <!-- formulaire de commmentaire  -->
     <div class="">
-        <h5 id=author><?= $comments['author'] ?> le <?= $comments['commentDate'] ?></h5>
-        <article id="comment" class=""><?= $comments['comment'] ?><br/><br/></article>
+        <div id="formForComment">
+            <form class="form-group" action="../../blogJF/App/index.php?p=post&id=<?= $_GET['id'] ?>" method="post">
+                <div class="form-group">
+                    <label class="control-label">Pseudo </label>
+                    <input type="text" name="author" class="form-control" value=" "/>
+                </div>
+                <input class="form-inline" type="hidden" name="chapterId" value="<?= $_GET['id'] ?>">
+                <div class="form-group">
+                    <label class="control-label" for="comment">Mon message : </label>
+                    <textarea id="comBox" class="" name="comment" rows="2"></textarea>
+                </div>
+                <button class="pull-right btn btn-default mr-2" type="submit">Envoyer</button>
+                <br/>
+            </form>
+        </div>
     </div>
-<?php
-    } else {
-        foreach ($comments as $comment) :
-            ?>
-            <div class="frame">
-                <h5 id=author><?= $comment['author'] ?> le <?= $comment['commentsDate'] ?></h5>
-                <article id="comment" class=""><?= htmlspecialchars_decode($comment['comment']) ?><br/><br/></article>
-                <button type="submit" onclick="openModal()">signaler un commentaire</button>
+    <!-- Liste des commentaires du chapitres -->
+    <article class="row align-items-lg-center">
+        <div class="col-lg-10" id="contentOne">
+            <div class="">
+                <?php
+                $i = 0;
+                if (true == $comments) {
+                    if ($_SESSION['countLines'] <= 1) {
+                        ?>
+                        <div class="frame">
+                            <h5 id=author><?= $comments['author'] ?> le <?= $comments['commentDate'] ?></h5>
+                            <p id="comment"><?= $comments['comment'] ?></p>
+                        </div>
+                        <?php
+                    } else {
+                        foreach ($comments as $comment) :
+                            ?>
+                            <div class="frame">
+                                <form id="formReport" method="post" action="#">
+                                    <h5 id=author><?= $comment['author'] ?> le <?= $comment['commentsDate'] ?></h5>
+                                    <p id="comment_<?= $i++ ?>"
+                                       class=""><?= htmlspecialchars_decode($comment['comment']) ?></p>
+                                    <input title="idCo" class="text-sm-center" value="<?php $_POST['idCo'] =  $comment['id'] ?>">
+                                    <button type="submit" id="modalBtn" formaction="">signaler un commentaire</button>
+                                    <!-- data-toggle="modal"
+                                           href="#modalBox" -->
+                                </form>
+                            </div>
+                        <?php
+                        endforeach;
+                    }
+                } ?>
             </div>
-        <?php
-        endforeach;
-    }
-} ?>
+
+
+    </article>
+
+    <p>idComm : <?php var_dump($comment['id']) ?></p>
+    <p>idComm : <?php var_dump($_POST) ?></p>
 </div>
-<div id="modal" class="invisible">
-    <h5 id = report >Signaler un commentaire</h5>
-    <br/>
-    <form name = "reportSelected" class="" method="post" action="#">
-        <input type="hidden" value="<?= $comment['comment'] ?>"/>
-        <label >Sélectionner un motif de signalement :
-            <select id= "reportSelected" name = "reportSelected" class="list-group-item-action">
-                <option value="report1"></option>
-                <option value="report2">insulte</option>
-                <option value="report3">inutile</option>
-            </select>
-        </label>
-        <button id="modal-button" class="form-group" type="submit" name="report" onclick="">Valider</button>
-        <button id="modal-button" class="form-group" type="reset" name="report" onclick="closeModal()">Annuler</button>
-    </form>
-</div>
+
+
+

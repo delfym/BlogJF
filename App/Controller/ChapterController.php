@@ -7,7 +7,7 @@ use App\Model\CommentManager;
 class ChapterController extends Controller {
 
     public function home() {
-            $this->view->generate('home');
+        $this->view->generate('home');
     }
 
     public function listChapters() {
@@ -21,7 +21,7 @@ class ChapterController extends Controller {
             $chapter = $this->chapter->getChapter($id);
             $comments = $this->comment->getComments($id);
             $_SESSION['countLines'] = $this->comment->getCount();
-            $this->view->generate('chapterView', $chapter, $comments, $_SESSION['countLines']);
+            $this->view->generate('chapterViewBis', $chapter, $comments, $_SESSION['countLines']);
         }
     }
 

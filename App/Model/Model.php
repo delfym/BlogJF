@@ -24,6 +24,7 @@ abstract class Model
 //echo '<br/> je suis ds le query<br/>';
         } elseif ($request !== null && ($parameters != null)) {
             $req = $this->db->prepare($request);
+  //  var_dump($req);
             $reqType = substr($request, 0, 6 );
             $req->execute($parameters);
             if (($reqType == 'INSERT') || ($reqType == 'UPDATE') || ($reqType == 'DELETE')){

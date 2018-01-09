@@ -7,9 +7,9 @@ require_once dirname(__DIR__) . '/template.php';
 
         if (!empty($_SESSION['error'])) {
             ?>
-            <div class="">
-                <p id="error" class="">Les identifiants saisis sont incorrects. Merci de les saisir de nouveau</p>
-            </div>
+            <section class="alert alert-danger">
+                <p id="error">Les identifiants saisis sont incorrects. Merci de les saisir de nouveau</p>
+            </section>
 
             <?php
             $_SESSION['error'] = "";
@@ -25,9 +25,12 @@ require_once dirname(__DIR__) . '/template.php';
             </div>
             <div class="form-group">
                 <label class="control-label">Mot de passe : </label>
-                <input type="password" name="password" class="form-control" value=""/>
+                    <input type="password" name="password" class="form-control" value=""/>
             </div>
-            <button id="auth" class="btn btn-default btn-sm" name="auth" type="submit">Envoyer</button>
+            <div class="row form-group  col-sm-offset-2 col-sm-10">
+                <button id="auth" class="btn btn-default btn-sm" name="auth" type="submit">Envoyer</button>
+                <button class="btn btn-default btn-sm" name="cancel"  type="submit">Annuler</button>
+            </div>
             <br/>
         </form>
         <div class="col"></div>
