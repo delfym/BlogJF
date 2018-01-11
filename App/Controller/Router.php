@@ -9,7 +9,7 @@
 namespace App\Controller;
 
 
-class Router
+abstract class Router
 {
     protected $page;
     protected $user;

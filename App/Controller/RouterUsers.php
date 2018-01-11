@@ -19,17 +19,19 @@ class RouterUsers extends Router {
         try {
             if (isset($_GET['p'])){
                 if ($_GET['p'] == 'post') {
-                    $this->page->post();
+                    $this->page->postComment();
                 } elseif (isset($_GET) && !empty($_GET['id'])) {
                     $this->page->chapter(htmlspecialchars($_GET['id']));
                 } elseif ($_GET['p'] == 'login') {
                     $this->auth->setLogin();
-                } elseif  ($_GET['p'] == 'chapter'){
+                } elseif ($_GET['p'] == 'chapter'){
                     $this->page->chapter($_GET['id']);
-                } elseif  ($_GET['p'] == 'list'){
+                } elseif ($_GET['p'] == 'list') {
                     $this->page->listChapters();
-                } elseif  ($_GET['p'] == 'report'){
+                } elseif ($_GET['p'] == 'report') {
                     $this->user->home();
+                } elseif ($_GET['p'] == 'postReport') {
+                    $this->page->report($_POST);
                 }
             } else {
                 $this->page->home();

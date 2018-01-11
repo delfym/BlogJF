@@ -21,7 +21,7 @@ require_once dirname(__DIR__) . '/template.php';
         <form class="form-group col-lg-6 align-items-center" id="login" action="indexAdmin.php" method="post">
             <div class="form-group">
                 <label class="control-label">Identifiant : </label>
-                <input type="text" name="username" class="form-control" value=""/>
+                <input type="text" name="username" class="form-control" autofocus/>
             </div>
             <div class="form-group">
                 <label class="control-label">Mot de passe : </label>

@@ -22,9 +22,11 @@ class CommentManager extends Model
 
     }
 
-    public function getComments($chapterId)
-    {
-        return $this->request('SELECT id, author, comment, DATE_FORMAT(commentDate, \' %d/%m/%Y à %Hh %imin %ss\') AS commentsDate, chapterId FROM comments WHERE chapterId = ? ORDER BY commentDate DESC', [$chapterId]);
+    public function getComments($chapterId) {
+        return $this->request('SELECT id, author, comment, 
+            DATE_FORMAT(commentDate, \' %d/%m/%Y à %Hh %imin %ss\') AS commentsDate,
+            chapterId FROM comments WHERE chapterId = ? ORDER BY commentDate DESC',
+            [$chapterId]);
     }
 
     public function addComment($parameters = [])
@@ -38,11 +40,10 @@ class CommentManager extends Model
 
     public function addReport($parameters)
     {
-        $id = htmlspecialchars($_GET['id']);
-        return $this->request(
-            'UPDATE comments SET reported = true, report = :report WHERE chapterId=' . $id,
+        return $this->request('INSERT INTO reports (commentId, cause) VALUES (:commentId, :cause)',
             array(
-                'report' => htmlspecialchars($parameters['reportSelected']),
+                'commentId' => htmlspecialchars($_POST['idCom']),
+                'cause' => htmlspecialchars($_POST['reportSelected'])
             ));
     }
 
@@ -56,21 +57,24 @@ class CommentManager extends Model
         return $this->request('SELECT * FROM reports JOIN comments WHERE reports.commentId = comments.id');
     }
 
-    public function updateReport($data){
+    public function updateReport($data)
+    {
         $this->request('UPDATE reports SET title = :title, chapterName = :chapterName,  content = :content, creationDate = NOW() WHERE id =' . $data['id'],
             array(
                 'title' => htmlspecialchars($data['title']),
                 'chapterName' => htmlspecialchars(($data['chapterName'])),
-                'content'=> htmlspecialchars($data['textAdmin']))
+                'content' => htmlspecialchars($data['textAdmin']))
         );
     }
 
-    public function deleteReport($id){
-        $this->request('DELETE FROM report WHERE commentId = ?', [$id]);
+    public function deleteReport($id)
+    {
+        $this->request('DELETE FROM reports WHERE commentId = ?', [$id]);
     }
 
-    public function deleteComment($id){
-        $this->request('DELETE FROM comment WHERE commentId = ?', [$id]);
+    public function deleteComment($id)
+    {
+        $this->request('DELETE FROM comments WHERE id = ?', [$id]);
     }
 
 }

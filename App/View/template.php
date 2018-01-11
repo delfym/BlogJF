@@ -18,9 +18,6 @@
             branding: false,
             preview_styles: true,
             menu: {
-                edit: {title: 'Edit', items: 'undo redo | cut copy paste pastetext | selectall'},
-                insert: {title: 'Insert', items: 'link media | template hr'},
-                format: {title: 'Format', items: 'bold italic underline strikethrough | formats | removeformat'},
                 table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'},
                 tools: {title: 'Tools', items: 'spellchecker code'}
             },

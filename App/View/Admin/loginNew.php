@@ -7,11 +7,11 @@ require_once dirname(__DIR__) . '/template.php';
         <form class="form-group col-lg-6 align-items-center " id="login" action="indexAdmin.php" method="post">
             <div class="form-group ">
                 <label class="control-label">Identifiant : </label>
-                <input type="text" name="username" class="form-control" value=""/>
+                <input title="new user" type="text" name="username" class="form-control" autofocus/>
             </div>
             <div class="form-group">
                 <label class="control-label">Mot de passe : </label>
-                <input type="password" name="password" class="form-control" value=""/>
+                <input title="new pass" type="password" name="password" class="form-control"/>
             </div>
             <div class="row form-group col-sm-offset-2 col-sm-10">
             <button class="btn btn-default btn-sm" name="newlog" type="submit">Enregistrer</button><br/>

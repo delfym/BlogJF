@@ -1,5 +1,6 @@
 
 <?php require_once 'View/template.php'; ?>
+
 <?php foreach ($variables as $chapter) : ?>
     <div class ="frame2 container col-lg-8 text-justify">
         <a href="index.php?p=chapter&id=<?= $chapter['id'] ?>">

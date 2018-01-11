@@ -33,7 +33,6 @@ class AdminController extends \App\Controller\Controller
         $id = $data['id'];
         $chapter = $this->chapter->update($data);
         $chapter = $this->chapter->getChapter($id);
-        //var_dump($chapter);
         $this->viewAdmin->generate('chapterView', $chapter);
     }
 
@@ -53,28 +52,14 @@ class AdminController extends \App\Controller\Controller
         $this->viewAdmin->generate('chapterNew');
     }
 
-    public function report($parameters){
-        if (!isset($parameters)){
-            header('Location: index.php?p=chapter&id='.$_GET['id']);
-            exit();
-        } else {
-            //echo '<pre>';
-            //var_dump($parameters);
-            $id = htmlspecialchars($_GET['id']);
-            $this->comment->addReport($parameters);
-            header('Location: index.php?p=chapter&id='.$id);
-            exit();
-        }
-    }
-
-    public function deleteReport($id){  //supprimer le commentaire + le report
+    public function deleteReport($id){
         $this->comment->deleteReport($id);
         $this->home();
     }
 
     public function deleteComment($id){  //supprimer le commentaire + le report
-        $this->comment->deleteComment($id);
         $this->comment->deleteReport($id);
+        $this->comment->deleteComment($id);
         $this->home();
     }
 

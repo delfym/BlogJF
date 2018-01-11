@@ -25,11 +25,9 @@ class RouterAdmin extends \App\Controller\RouterUsers
                 } elseif ($_GET['p'] == 'create') {
                     $this->user->create($_POST);
                 }  elseif ($_GET['p'] == 'report' && $_GET['action']=='delete') {
-                    //  supprimer le commentaire et le report
-                    $this->user->deleteComment($_POST);
-                }elseif ($_GET['p'] == 'report') {
-                //    var_dump($_POST);
-                    $this->user->report($_POST);
+                    $this->user->deleteComment($_GET['id']);
+                } elseif ($_GET['p'] == 'report' && $_GET['action']=='ok') {
+                    $this->user->deleteReport($_GET['id']);
                 }
             } elseif (isset($_POST['chapter'])) {
                 $this->user->chapter($_POST['chapterSelected']);

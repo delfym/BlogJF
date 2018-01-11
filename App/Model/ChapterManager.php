@@ -19,7 +19,7 @@ class ChapterManager extends Model {
     }
 
     public function update($data){
-        $this->request('UPDATE chapter SET title = :title, chapterName = :chapterName,  content = :content, creationDate = NOW() WHERE id =' . $data['id'],
+        return $this->request('UPDATE chapter SET title = :title, chapterName = :chapterName,  content = :content, creationDate = NOW() WHERE id =' . $data['id'],
             array(
             'title' => htmlspecialchars($data['title']),
             'chapterName' => htmlspecialchars(($data['chapterName'])),
@@ -37,6 +37,10 @@ class ChapterManager extends Model {
 
     public function getChapter($id) {
         return $this->request('SELECT id, title, chapterName, content, DATE_FORMAT(creationDate, \'%d/%m/%Y\') AS chapterDate  FROM chapter WHERE id = ?', [$id]);
+    }
+
+    public function countChapters(){
+        return $this->request('SELECT COUNT(*) FROM chapter');
     }
 
 }

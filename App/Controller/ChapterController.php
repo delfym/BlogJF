@@ -16,25 +16,30 @@ class ChapterController extends Controller {
     }
 
     public function chapter($id) {
-        $page = $_GET;
-        if ($page['p'] == 'chapter') {
             $chapter = $this->chapter->getChapter($id);
             $comments = $this->comment->getComments($id);
             $_SESSION['countLines'] = $this->comment->getCount();
-            $this->view->generate('chapterViewBis', $chapter, $comments, $_SESSION['countLines']);
-        }
+            $this->view->generate('chapterView', $chapter, $comments, $_SESSION['countLines']);
     }
 
-    public function post() {
-        if (!isset($_POST) || empty($_POST['author']) || empty($_POST['comment'])){
-            header('Location: index.php?p=chapter&id='.$_GET['id']);
-            exit();
-        } else {
+    public function postComment() {
+        if (isset($_POST) || empty($_POST['author']) || empty($_POST['comment'])){
             $comment = new CommentManager();
             $comment->addComment($_POST);
-            header('Location: index.php?p=chapter&id='.$_GET['id']);
-            exit();
         }
+            $this->chapter($_GET['id']);
+    }
+
+    public function paging(){
+        $_SESSION['nPages'] = $this->chapter->countChapters();
+    }
+
+    public function report($parameters){
+
+        if (isset($parameters)){
+            $this->comment->addReport($parameters);
+        }
+        $this->chapter($_POST['idChap']);
     }
 
 }

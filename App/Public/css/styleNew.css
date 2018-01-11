@@ -41,20 +41,20 @@ a :hover, .nav-item :hover {
 	text-decoration-line:none;
 }
 
-#title{
+#title, #chapterName {
 	color: #ac0800;
 }
 
-#titleHome{
+#titleHome {
 	margin-top: 15px;
 	padding: 30px;
 }
 
-#login{
+#login {
 	margin-top: 100px;
 }
 
-#bio{
+#bio {
 	padding: 20px;
 }
 
@@ -111,5 +111,6 @@ input #commentInp {
 }
 
 div.mce-edit-area {
-	background-color:#795548;
+	/*background-color:#795548; */
 }
+
