@@ -24,7 +24,7 @@ h4 {
     color: #795548;
 }
 
-h1, h2, .nav-link {
+h1, h2, .nav-link, #chapterName, #chpNumber  {
 	color: #95a5a6;
 }
 
@@ -41,7 +41,7 @@ a :hover, .nav-item :hover {
 	text-decoration-line:none;
 }
 
-#title, #chapterName {
+#title {
 	color: #ac0800;
 }
 
@@ -114,3 +114,6 @@ div.mce-edit-area {
 	/*background-color:#795548; */
 }
 
+#chapterName {
+    margin-top: 15px;
+}

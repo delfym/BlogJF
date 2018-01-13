@@ -59,9 +59,9 @@ class CommentManager extends Model
 
     public function updateReport($data)
     {
-        $this->request('UPDATE reports SET title = :title, chapterName = :chapterName,  content = :content, creationDate = NOW() WHERE id =' . $data['id'],
+        $this->request('UPDATE reports SET chpNumber = :chpNumber, chapterName = :chapterName,  content = :content, creationDate = NOW() WHERE id =' . $data['id'],
             array(
-                'title' => htmlspecialchars($data['title']),
+                'chpNumber' => htmlspecialchars($data['chpNumber']),
                 'chapterName' => htmlspecialchars(($data['chapterName'])),
                 'content' => htmlspecialchars($data['textAdmin']))
         );

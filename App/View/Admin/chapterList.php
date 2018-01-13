@@ -30,7 +30,7 @@
                         <label>
                             <select class="list-group list-group-item-dark" name="chapterSelected">
                                 <?php foreach ($variables as $chapter) : ?>
-                                    <option name="id" value="<?= $chapter['id'] ?>"><?= $chapter['title'] ?>
+                                    <option name="id" value="<?= $chapter['id'] ?>"><?= $chapter['chpNumber'] ?>
                                         - <?= $chapter['chapterName'] ?></option>
                                 <?php endforeach; ?>
                             </select>

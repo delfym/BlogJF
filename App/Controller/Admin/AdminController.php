@@ -19,7 +19,7 @@ class AdminController extends \App\Controller\Controller
     }
 
     public function home($data=[]) {
-        $chapters = $this->chapter->getChapters();
+        $chapters = $this->chapter->getChaptersList();
         $reports = $this->comment->getReports();
         $this->viewAdmin->generate('chapterList',$chapters,$reports);
     }

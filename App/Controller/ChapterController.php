@@ -6,12 +6,22 @@ use App\Model\CommentManager;
 
 class ChapterController extends Controller {
 
+    protected $nbPages;
+
     public function home() {
         $this->view->generate('home');
     }
 
-    public function listChapters() {
+    public function listChapters($numPage = null) {
+        $chapters = $this->paging($numPage);
+        $nbPages = $this->nbPages;
+        $nbOfPages[0] =  (string) $nbPages;
+        $this->view->generate('chaptersList', $chapters,null, null, $nbOfPages);
+    }
+
+    public function chapList() {
         $chapters = $this->chapter->getChapters();
+
         $this->view->generate('chaptersList', $chapters);
     }
 
@@ -30,8 +40,21 @@ class ChapterController extends Controller {
             $this->chapter($_GET['id']);
     }
 
-    public function paging(){
-        $_SESSION['nPages'] = $this->chapter->countChapters();
+    public function paging($numPage=null){
+        $currentPage = $numPage;
+        $perPage = 5;
+        $start = (($currentPage-1) * $perPage);
+        $nbChapters = $this->chapter->countChapters();
+        $this->nbPages = ceil($nbChapters/$perPage);
+        if (empty($numPage)){
+            return $chapters = $this->chapter->getChapters(0,5);
+            //$this->view->generate('chaptersList', $chapters);
+        } else {
+            if(($start <= $nbChapters)
+                && ($perPage <= $this->chapter->countChapters())){
+            return $chapters = $this->chapter->getChapters($start, $perPage);
+            }
+        }
     }
 
     public function report($parameters){

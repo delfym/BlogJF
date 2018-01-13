@@ -18,7 +18,7 @@ abstract class Model
         $this->db = $this->db->getPDO();
     }
 
-    public function request($request, $parameters = []) {
+    public function request($request, $parameters = [], $start = null, $end = null) {
         if ($parameters == null) {
             $req = $this->db->query($request);
         } elseif ($request !== null && ($parameters != null)) {
@@ -30,7 +30,7 @@ abstract class Model
             }
         }
         $this->count = $req->rowCount();
-        return $req->fetchAll(\PDO::FETCH_ASSOC);
+        return $req->fetchAll();
     }
 
     protected function getCount() {

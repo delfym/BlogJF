@@ -4,10 +4,14 @@
         <div class="row">
             <div class="col-md-12">
                 <input type="hidden" name="id" value="<?= $variables[0]['id'] ?>">
-                <input type="hidden" name="title" value="<?= $variables[0]['title'] ?>">
-                <input title="chapterName" id="chapterName" name="chapterName" type="text"
+                <input type="hidden" name="chpNumber" value="<?= $variables[0]['chpNumber'] ?>">
+                <input title="chapter Number" id="chpNumber" name="chpNumber" type="text"
                            class="input-group-lg font-weight-bold text-center col-lg-12"
-                           value="<?= $variables[0]['title'] .' - ' . $variables[0]['chapterName'] ;?>"/>
+                           value="<?= $variables[0]['chpNumber'] ?>"/>
+                <br/>
+                <input title="chapterName" id="chapterName" name="chapterName" type="text"
+                       class="input-group-lg font-weight-bold text-center col-lg-12"
+                       value="<?= $variables[0]['chapterName'] ;?>"/>
                 <br/><br/>
                 <textarea title="chapterContent" id="textAdmin" class="form-control flex-column" rows="10"
                           name="textAdmin"><?= $variables[0]['content'] ?></textarea>

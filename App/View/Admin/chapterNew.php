@@ -4,7 +4,7 @@
 
     <form class="form-control" method="post" action="indexAdmin.php">
         <div class="row col-lg-12">
-            <p id=title>Chapitre n° <input class="col-sm-1" type="text" name="title"/>
+            <p id=title>Chapitre n° <input class="col-sm-1" type="text" name="chapNumber"/>
                 Titre du chapitre : <input type="text" name="chapterName"/>
             </p>
             <label id="title" class="">Texte à saisir :

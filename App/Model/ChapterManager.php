@@ -10,18 +10,18 @@ namespace App\Model;
 class ChapterManager extends Model {
 
     public function create($data){
-        $this->request('INSERT INTO chapter(title, chapterName, content, creationDate) VALUES (:title, :chapterName, :content, NOW())',
+        $this->request('INSERT INTO chapter(chpNumber, chapterName, content, creationDate) VALUES (:chpNumber, :chapterName, :content, NOW())',
         (array(
-            'title' => 'CHAPITRE ' . htmlspecialchars($data ['title']),
+            'chpNumber' => 'CHAPITRE ' . htmlspecialchars($data ['chpNumber']),
             'chapterName' => htmlspecialchars($data['chapterName']),
             'content' => htmlspecialchars($data['textAdmin'])
         )));
     }
 
     public function update($data){
-        return $this->request('UPDATE chapter SET title = :title, chapterName = :chapterName,  content = :content, creationDate = NOW() WHERE id =' . $data['id'],
+        return $this->request('UPDATE chapter SET chpNumber = :chpNumber, chapterName = :chapterName,  content = :content, creationDate = NOW() WHERE id =' . $data['id'],
             array(
-            'title' => htmlspecialchars($data['title']),
+            'chpNumber' => htmlspecialchars($data['chpNumber']),
             'chapterName' => htmlspecialchars(($data['chapterName'])),
             'content'=> htmlspecialchars($data['textAdmin']))
         );
@@ -31,17 +31,29 @@ class ChapterManager extends Model {
         $this->request('DELETE FROM chapter WHERE id = ?', [$id]);
     }
 
-    public function getChapters() {
-        return $this->request('SELECT id, title, chapterName, content, DATE_FORMAT(creationDate, \'%d/%m/%Y\') AS chapterDate FROM chapter ORDER BY id' );
+    public function getChapters($min=null, $max=null) {
+        return $this->request('
+            SELECT id, chpNumber, chapterName, content, 
+            DATE_FORMAT(creationDate, \'%d/%m/%Y\') AS chapterDate 
+            FROM chapter ORDER BY id LIMIT '. $min .',' . $max
+            );
     }
 
+    //récupère la liste des chapitres sans limite
+    public function getChaptersList() {
+        return $this->request('SELECT * FROM chapter ORDER BY id');
+    }
+    
     public function getChapter($id) {
-        return $this->request('SELECT id, title, chapterName, content, DATE_FORMAT(creationDate, \'%d/%m/%Y\') AS chapterDate  FROM chapter WHERE id = ?', [$id]);
+        return $this->request(
+        'SELECT id, chpNumber, chapterName, content, DATE_FORMAT(creationDate, \'%d/%m/%Y\') 
+                  AS chapterDate  FROM chapter WHERE id = ?', [$id]);
     }
 
     public function countChapters(){
-        return $this->request('SELECT COUNT(*) FROM chapter');
-    }
+        $res = $this->request('SELECT COUNT(*) As nbChapters FROM chapter');
+        return $res[0][0];
+      }
 
 }
 

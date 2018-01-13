@@ -26,6 +26,8 @@ class RouterUsers extends Router {
                     $this->auth->setLogin();
                 } elseif ($_GET['p'] == 'chapter'){
                     $this->page->chapter($_GET['id']);
+                } elseif (($_GET['p'] == 'list')&& isset($_GET['numPage'])) {
+                    $this->page->listChapters($_GET['numPage']);
                 } elseif ($_GET['p'] == 'list') {
                     $this->page->listChapters();
                 } elseif ($_GET['p'] == 'report') {

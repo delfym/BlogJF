@@ -15,9 +15,7 @@ class View
     protected $template = 'template'; // par défaut
 
 
-    public function generate($view, $variables = [], $comments=[], $countLines = null){
-        //$viewPath1 = dirname(__DIR__ ) . '/' . $this->view . $view;
-        //var_dump($reports);
+    public function generate($view, $variables = [], $comments=[], $countLines = null, $nbOfPages=null){
         $viewPath1 = dirname(__DIR__ ) . $this->view . $view;
         ob_start();
         if(!empty($variables)){
@@ -31,6 +29,11 @@ class View
         if (isset($countLines)){
             $count [0] = $countLines;
             extract($count);
+        }
+
+        if (isset($nbOfPages)){
+            $nbPages[0] = $nbOfPages;
+            extract($nbPages[0]);
         }
         $content = ob_get_clean();
         //echo $viewPath1;

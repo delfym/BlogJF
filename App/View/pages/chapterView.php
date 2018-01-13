@@ -11,7 +11,7 @@ $_SESSION ['idChap'] = $_GET['id'] ;
     <div class="row">
         <div class="col-md-12">
             <div class="frame2">
-                <h5 id=title class="text-lg-center"><?= $variables[0]['title'] ?> - <?= $variables[0]['chapterName'] ?></h5>
+                <h5 id=title class="text-lg-center"><?= $variables[0]['chpNumber'] ?> - <?= $variables[0]['chapterName'] ?></h5>
                 <article id="content"><?= htmlspecialchars_decode($variables[0]['content']) ?></article>
             </div>
         </div>
@@ -40,7 +40,7 @@ $_SESSION ['idChap'] = $_GET['id'] ;
                     <form id="formReport" method="post">
                     <?php for ($i = 0; $i < $_SESSION['countLines']; $i++) {  ?>
                         <div class="frame">
-                            <h5 id=author><?= $comments[$i]['author'] ?>le <?= $comments[$i]['commentsDate'] ?></h5>
+                            <h5 id=author><?= $comments[$i]['author'] ?> le <?= $comments[$i]['commentsDate'] ?></h5>
                             <label title="commList"><?= $comments[$i]['comment'] ?></label>
                             <?php $commentId = $comments[$i]['id']; ?>
                             <button type="button" class="btn-sm float-right" data-toggle="modal"
