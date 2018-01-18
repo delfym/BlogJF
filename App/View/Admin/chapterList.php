@@ -7,7 +7,7 @@
             <h4 class="text-lg-center">Votre espace administrateur</h4>
             <div class="row" id="jumbo"></div>
             <a class="btn btn-group btn-primary btn-sm float-right" id="deco"
-               href="index.php">Déconnexion</a>
+               href="indexAdmin.php?p=reset">Déconnexion</a>
         </div>
     </div>
 

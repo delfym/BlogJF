@@ -58,6 +58,10 @@ a :hover, .nav-item :hover {
 	padding: 20px;
 }
 
+#pageNumber {
+	background-color: #795548;
+	color: #9E9E9E;
+}
 
 button, .btn-group, .btn {
 	background-color: #795548;
@@ -99,6 +103,8 @@ input #commentInp {
 .frame {
 	border-top : 1px solid white;
 	padding: 14px;
+	/* margin-top: 10px;
+	margin-bottom: 10px;*/
 }
 
 .frame2 {

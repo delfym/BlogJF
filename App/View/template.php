@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Blog de JF</title>
-    <!--link rel="stylesheet" type="text/css" href="Public/Bootstrap/bootstrap.css"-->
+    <link rel="stylesheet" type="text/css" href="Public/Bootstrap/bootstrap.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->

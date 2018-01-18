@@ -20,7 +20,7 @@ $_SESSION ['idChap'] = $_GET['id'] ;
     <!-- formulaire de commmentaire  -->
     <div class="">
         <div id="formForComment">
-            <form class="form-group" action="../../blogJF/App/index.php?p=post&id=<?= $_SESSION['idChap'] ?>" method="post">
+            <form class="form-group" action="index.php?p=post&id=<?= $_SESSION['idChap'] ?>" method="post">
                 <label for="author">Pseudo </label>
                 <input class="form-control" title="inpAuthor" type="text" name="author"
                        placeholder="Saisir votre pseudo" autofocus/>
@@ -34,7 +34,7 @@ $_SESSION ['idChap'] = $_GET['id'] ;
     <!-- Liste des commentaires du chapitre -->
     <div class="container">
         <article class="row align-items-lg-center">
-            <div class="col-lg-10" id="contentOne">
+            <div class="col-lg-11 col-md-10 col-sm-10" id="contentOne">
                 <?php
                 if ($comments) { ?>
                     <form id="formReport" method="post">
@@ -43,10 +43,12 @@ $_SESSION ['idChap'] = $_GET['id'] ;
                             <h5 id=author><?= $comments[$i]['author'] ?> le <?= $comments[$i]['commentsDate'] ?></h5>
                             <label title="commList"><?= $comments[$i]['comment'] ?></label>
                             <?php $commentId = $comments[$i]['id']; ?>
+                            <div class="row flex-lg-row-reverse">
                             <button type="button" class="btn-sm float-right" data-toggle="modal"
                                     onClick="extractId('<?= $comments[$i]['id']; ?>');"
                                     data-target="#modalBox">signaler un commentaire
                             </button>
+                            </div>
                         </div>
                     </form>
                     <?php }} ?>
@@ -63,7 +65,7 @@ $_SESSION ['idChap'] = $_GET['id'] ;
                     </div>
                     <div class="modal-body">
                         <form name="reportForm" id="reportForm" class="" method="post"
-                              action="../../blogJF/App/index.php?p=postReport">
+                              action="index.php?p=postReport">
                             <label>Sélectionner un motif de signalement :
                                 <select id="reportSelected" name="reportSelected" class="list-group-item-dark">
                                     <option value="infondé">infondé</option>

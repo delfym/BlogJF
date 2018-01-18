@@ -63,4 +63,9 @@ class AdminController extends \App\Controller\Controller
         $this->home();
     }
 
+    public function reset(){
+        $_SESSION ['access'] = false;
+        $this->view->generate('home');
+    }
+
 }

@@ -35,13 +35,13 @@ class Auth extends AdminController
     public function setLogin($logs=[]) {
         if (!empty($logs)) {
             $this->user = htmlspecialchars($logs['username']);
-            //$_SESSION ['username'] = $this->user;
-            $this->pass = ($logs['password']);
+            $this->pass = htmlspecialchars($logs['password']);
             $chapters = $this->chapter->getChaptersList();
             if (false == $this->loginAuth()) {
                 $_SESSION['error'] = "identifiants incorrects";
                 $this->viewAdmin->generate('login', [$_SESSION['error']]); //ajouter un parametre message d'erreur
             } else {
+                $_SESSION ['access'] = true;
                 $reports = $this->comment->getReports();
                 $this->viewAdmin->generate('chapterList', $chapters,$reports);
             }

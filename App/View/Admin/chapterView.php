@@ -1,5 +1,5 @@
 <?php require_once 'View/template.php'; ?>
-<div class="container">
+<div class="container-fluid">
     <form class="form-control" method="post" action="indexAdmin.php">
         <div class="row">
             <div class="col-md-12">
@@ -13,7 +13,7 @@
                        class="input-group-lg font-weight-bold text-center col-lg-12"
                        value="<?= $variables[0]['chapterName'] ;?>"/>
                 <br/><br/>
-                <textarea title="chapterContent" id="textAdmin" class="form-control flex-column" rows="10"
+                <textarea title="chapterContent" id="textAdmin" class="form-control" rows="10" cols="555"
                           name="textAdmin"><?= $variables[0]['content'] ?></textarea>
                 <span class="row ">
                     <button class="btn btn-group btn-primary" name="update" type="submit">Modifier</button>
