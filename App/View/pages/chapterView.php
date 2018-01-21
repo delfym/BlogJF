@@ -58,14 +58,14 @@ $_SESSION ['idChap'] = $_GET['id'] ;
         <!--  Modal -->
         <div class="modal" id="modalBox">
             <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content align-middle">
                     <div class="modal-header">
                         <h5 class="modal-title" id="report">Signaler le commentaire</h5>
                         <button type="button" class="close" data-dismiss="modal">x</button>
                     </div>
                     <div class="modal-body">
-                        <form name="reportForm" id="reportForm" class="" method="post"
-                              action="index.php?p=postReport">
+                        <form name="reportForm" id="reportForm" method="post"
+                              >
                             <label>Sélectionner un motif de signalement :
                                 <select id="reportSelected" name="reportSelected" class="list-group-item-dark">
                                     <option value="infondé">infondé</option>

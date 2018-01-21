@@ -1,14 +1,16 @@
 <?php require_once 'View/template.php'; ?>
 <?php define('ROOT', 'App'); ?>
 
-<h3 class="text-lg-center" id="titleHome">Un auteur aux multiples facettes</h3>
-<div class="row">
+
+    <h3 class="text-center" id="titleHome">Un auteur aux multiples facettes</h3>
+
+<div class="row flex-row">
     <div class="col-lg-6">
-        <img class="card-img" src="<?= dirname(ROOT) ?>/Public/Images/portrait.jpg">
+        <img class="card-img" id="jfImg" src="<?= dirname(ROOT) ?>/Public/Images/portrait.jpg">
     </div>
 
-    <div class="col-lg-6">
-        <h3 class="text-lg-center">Biographie</h3>
+    <div class="col-lg-6 justify-content-end">
+        <h3 class="text-center">Biographie</h3>
         <p id="bio" class="text-justify">Jean Forteroche naît le 15 mai 1958 dans le 13e arrondissement de Paris. A la
             publication de son premier roman, "Quoi?", récompensé par le prix Humaniis, il n’a que 20 ans. Avec "Jamais
             avec toi" (1978) puis "La revanche" (1980) pour lequel il remporte le Prix Malté, Jean Forteroche devient, à

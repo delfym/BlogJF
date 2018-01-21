@@ -12,7 +12,7 @@ class ChapterManager extends Model {
     public function create($data){
         $this->request('INSERT INTO chapter(chpNumber, chapterName, content, creationDate) VALUES (:chpNumber, :chapterName, :content, NOW())',
         (array(
-            'chpNumber' => 'CHAPITRE ' . htmlspecialchars($data ['chpNumber']),
+            'chpNumber' => 'CHAPITRE ' . htmlspecialchars($data ['chapNumber']),
             'chapterName' => htmlspecialchars($data['chapterName']),
             'content' => htmlspecialchars($data['textAdmin'])
         )));

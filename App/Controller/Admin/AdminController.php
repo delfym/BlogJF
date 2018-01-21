@@ -38,14 +38,16 @@ class AdminController extends \App\Controller\Controller
 
     public function delete($id){
         $this->chapter->delete($id);
-        $chapters = $this->chapter->getChapters();
+        $chapters = $this->chapter->getChaptersList();
         $this->viewAdmin->generate('chapterList', $chapters);
     }
 
     public function create($data){
         $newChapter = $this->chapter->create($data);
+       // echo '<br/>ici 1 <br/>';
         $chapters = $this->chapter->getChapters();
-        $this->viewAdmin->generate('chapterList', $chapters);
+        //echo '<br/>ici 2 <br/>';
+        $this->viewAdmin->generate('getChaptersList', $chapters);
     }
 
     public function chapterNew(){

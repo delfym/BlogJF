@@ -32,7 +32,7 @@ class RouterUsers extends Router {
                     $this->page->listChapters();
                 } elseif ($_GET['p'] == 'report') {
                     $this->user->home();
-                } elseif ($_GET['p'] == 'postReport') {
+                } elseif (isset($_POST['report'])) {
                     $this->page->report($_POST);
                 }
             } else {

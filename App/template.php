@@ -9,7 +9,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="Public/css/styleNew.css">
+    <!--link rel="stylesheet" type="text/css" href="Public/css/styleNew.css"-->
+    <!--link rel="stylesheet" type="text/css" href="Public/css/style.css"-->
     <script src="Public/tinymce/js/tinymce/tinymce.min.js"></script>
     <script>tinymce.init({
             selector:'textarea#textAdmin',
@@ -18,8 +19,6 @@
             preview_styles: true,
             menu: {
                 table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'},
-                insert: {title: 'Insert', items: 'link media | template hr'},
-                format: {title: 'Format', items: 'bold italic underline strikethrough superscript subscript | formats | removeformat'},
                 tools: {title: 'Tools', items: 'spellchecker code'}
             },
             setup: function (editor) { editor.on('change', function () { editor.save(); }); }

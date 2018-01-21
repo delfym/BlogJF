@@ -50,6 +50,11 @@ a :hover, .nav-item :hover {
 	padding: 30px;
 }
 
+#jfImg {
+	margin-top: 25%;
+	padding: 20px;
+}
+
 #login {
 	margin-top: 100px;
 }
@@ -68,16 +73,6 @@ button, .btn-group, .btn {
 	color: #9E9E9E;
 	border: #9E9E9E;
 	margin: 8px;
-}
-
-#modalBox {
-	border: #d35400 solid 4px;
-	background-color: #d35400;
-	text-align: center;
-	margin-top: 3em;
-    height: 350px;
-    width: 400px;
-    left : 5px;
 }
 
 #modal-button {
@@ -103,8 +98,6 @@ input #commentInp {
 .frame {
 	border-top : 1px solid white;
 	padding: 14px;
-	/* margin-top: 10px;
-	margin-bottom: 10px;*/
 }
 
 .frame2 {
@@ -112,14 +105,36 @@ input #commentInp {
 	padding: 14px;
 }
 
-.modal {
-	background-color: #e67e22;
-}
-
-div.mce-edit-area {
-	/*background-color:#795548; */
-}
-
 #chapterName {
     margin-top: 15px;
 }
+
+.modal-dialog {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.modal.fade .modal-dialog {
+	transform: translate(0, -100%);
+}
+
+.modal.in .modal-dialog {
+	transform: translate(0, 0);
+}
+
+#btnPages {
+	display: flex;
+	justify-content: center;
+}
+
+@media all {
+
+	#jfImg {
+		margin-top: 4px;
+		margin-bottom: 8px;
+		padding: 4px;
+	}
+}
+

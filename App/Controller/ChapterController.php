@@ -21,7 +21,6 @@ class ChapterController extends Controller {
 
     public function chapList() {
         $chapters = $this->chapter->getChapters();
-
         $this->view->generate('chaptersList', $chapters);
     }
 
@@ -48,7 +47,6 @@ class ChapterController extends Controller {
         $this->nbPages = ceil($nbChapters/$perPage);
         if (empty($numPage)){
             return $chapters = $this->chapter->getChapters(0,5);
-            //$this->view->generate('chaptersList', $chapters);
         } else {
             if(($start <= $nbChapters)
                 && ($perPage <= $this->chapter->countChapters())){
@@ -57,9 +55,8 @@ class ChapterController extends Controller {
         }
     }
 
-    public function report($parameters){
-
-        if (isset($parameters)){
+    public function report($parameters) {
+        if (isset($parameters)) {
             $this->comment->addReport($parameters);
         }
         $this->chapter($_POST['idChap']);

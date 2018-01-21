@@ -13,7 +13,8 @@ class RouterAdmin extends \App\Controller\RouterUsers
 {
     public function Route()
     {
-        if (isset($_SESSION ['access']) && ($_SESSION ['access'] === true)) {
+        echo 'je suis ds le router admin' . $_SESSION ['access'];
+        if ($_SESSION ['access'] === true) {
             try {
                 if (isset($_GET['p'])) {
                     if ($_GET['p'] == 'home') {

@@ -20,7 +20,6 @@
             <tr>
                 <th>Modifier un chapitre</th>
                 <th>Ajouter un nouveau chapitre</th>
-                <th>Ajouter un administrateur</th>
             </tr>
             </thead>
             <tbody>
@@ -43,9 +42,41 @@
                     <a class="btn btn-group btn-primary btn-sm" name="new"
                        href="indexAdmin.php?p=chapterNew">Ajouter un nouveau chapitre</a>
                 </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="col-lg table-responsive">
+        <table class="table table-hover table-bordered">
+            <caption>
+                <h4>Gestion des administrateurs</h4>
+            </caption>
+            <thead class="text-lg-center">
+            <tr>
+                <th>Modifier un administrateur</th>
+                <th>Ajouter un administrateur</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
                 <td class="align-middle">
-                    <a class="btn btn-group btn-primary btn-sm" name="new" href="indexAdmin.php?p=loginNew">Ajouter un
-                        administrateur</a>
+                    <form class="form-inline" method="post" action="indexAdmin.php">
+                        <label>
+                            <select class="list-group list-group-item-dark" name="chapterSelected">
+                                <?php foreach ($users as $user) : ?>
+                                    <option name="id" value="<?= $user['id'] ?>"><?= $user['chpNumber'] ?>
+                                        - <?= $user['chapterName'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </label>
+                        <button class="btn-group btn-primary btn-sm" name="chapter" href="indexAdmin.php?p="
+                                type="submit">Modifier
+                        </button>
+                    </form>
+                <td  class="align-middle">
+                    <a class="btn btn-group btn-primary btn-sm" name="new"
+                       href="indexAdmin.php?p=chapterNew">Ajouter un nouveau chapitre</a>
                 </td>
             </tr>
             </tbody>
