@@ -36,7 +36,6 @@ class View
             extract($nbPages[0]);
         }
         $content = ob_get_clean();
-        //echo $viewPath1;
         require ($viewPath1 . '.php');
     }
 }

@@ -23,13 +23,25 @@ class Users extends \App\Model\Model {
         )));
     }
 
+    public function updateUser($login){
+        $passHash = password_hash($login['password'], PASSWORD_DEFAULT);
+        $this->request('UPDATE login SET username = :username, password = :password WHERE id = '. $login['userId'],
+            (array(
+                'username' => htmlspecialchars($login['username']),
+                'password' => $passHash
+            )));
+    }
+
     public function getUser($id){
-    //    return $this->request('SELECT * FROM login');
        return $this->request('SELECT * FROM login WHERE id = ?', [$id]);
     }
 
     public function getUsers(){
         return $this->request('SELECT * FROM login');
+    }
+
+    public function deleteUser($id){
+        $this->request('DELETE FROM login WHERE id = ?', [$id]);
     }
 
 }

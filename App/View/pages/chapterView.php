@@ -2,7 +2,6 @@
 require_once dirname(__DIR__) . '/template.php';
 ?>
 
-
 <div class="container col-lg-8 text-justify">
 
 <?php if(!$_SESSION['idChap']){
@@ -55,37 +54,34 @@ $_SESSION ['idChap'] = $_GET['id'] ;
             </div>
         </article>
 
-        <!--  Modal -->
-        <div class="modal" id="modalBox">
-            <div class="modal-dialog">
-                <div class="modal-content align-middle">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="report">Signaler le commentaire</h5>
-                        <button type="button" class="close" data-dismiss="modal">x</button>
-                    </div>
-                    <div class="modal-body">
-                        <form name="reportForm" id="reportForm" method="post"
-                              >
-                            <label>Sélectionner un motif de signalement :
-                                <select id="reportSelected" name="reportSelected" class="list-group-item-dark">
-                                    <option value="infondé">infondé</option>
-                                    <option value="insulte">insulte</option>
-                                    <option value="inutile">inutile</option>
-                                </select>
-                            </label>
-                            <input type="hidden" title="idCom" name="idCom" id="idCom" class="text-sm-center"/>
-                            <input type="hidden" title="idChap" name="idChap" id="idChap" value="<?= $_SESSION['idChap'] ?>"/>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" id=""
-                                name="report">Valider
-                        </button>
-                        </form>
-                    </div>
+    <!--  Modal -->
+    <div class="modal" id="modalBox">
+        <div class="modal-dialog">
+            <div class="modal-content align-middle">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="report">Signaler le commentaire</h5>
+                    <button type="button" class="close" data-dismiss="modal">x</button>
+                </div>
+                <div class="modal-body">
+                    <form name="reportForm" id="reportForm" method="post" action="index.php?p=postReport">
+                        <label>Sélectionner un motif de signalement :
+                            <select id="reportSelected" name="reportSelected" class="list-group-item-dark">
+                                <option value="infondé">infondé</option>
+                                <option value="insulte">insulte</option>
+                                <option value="inutile">inutile</option>
+                            </select>
+                        </label>
+                        <input type="hidden" title="idCom" name="idCom" id="idCom" class="text-sm-center"/>
+                        <input type="hidden" title="idChap" name="idChap" id="idChap" value="<?= $_SESSION['idChap'] ?>"/>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" name="report">Valider</button>
+                    </form>
                 </div>
             </div>
         </div>
-        <!--/div-->
+    </div>
+    <!--/div-->
     </div>
 
 </div>

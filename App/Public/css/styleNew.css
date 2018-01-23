@@ -129,6 +129,10 @@ input #commentInp {
 	justify-content: center;
 }
 
+.adminArray {
+	text-align: center;
+}
+
 @media all {
 
 	#jfImg {

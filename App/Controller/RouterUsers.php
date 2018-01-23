@@ -16,8 +16,10 @@ class RouterUsers extends Router {
     }
 
     public function Route(){
+
         try {
-            if (isset($_GET['p'])){
+            if (isset($_GET['p']) && !empty($_GET['p'])){
+                $_GET['p'] = (string) ($_GET['p']);
                 if ($_GET['p'] == 'post') {
                     $this->page->postComment();
                 } elseif (isset($_GET) && !empty($_GET['id'])) {
@@ -32,8 +34,10 @@ class RouterUsers extends Router {
                     $this->page->listChapters();
                 } elseif ($_GET['p'] == 'report') {
                     $this->user->home();
-                } elseif (isset($_POST['report'])) {
+                } elseif ($_GET['p'] == 'postReport') {
                     $this->page->report($_POST);
+                } else {
+                    $this->page->home();
                 }
             } else {
                 $this->page->home();

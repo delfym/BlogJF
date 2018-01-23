@@ -31,7 +31,9 @@ class RouterAdmin extends \App\Controller\RouterUsers
                     } elseif ($_GET['p'] == 'report' && $_GET['action'] == 'ok') {
                         $this->user->deleteReport($_GET['id']);
                     } elseif ($_GET['p'] == 'reset') {
-                        $this->user->reset();
+                        $this->auth->reset();
+                    } elseif ($_GET['p'] == 'updateUser') {
+                        $this->auth->loginChange();
                     }
                 } elseif (isset($_POST['chapter'])) {
                     $this->user->chapter($_POST['chapterSelected']);
@@ -45,6 +47,10 @@ class RouterAdmin extends \App\Controller\RouterUsers
                     $this->user->home();
                 } elseif (isset($_POST['newlog'])) {
                     $this->auth->createLogin($_POST);
+                } elseif (isset($_POST['updateLog'])) {
+                    $this->auth->updateLogin($_POST);
+                } elseif (isset($_POST['deleteUser'])) {
+                    $this->auth->deleteLogin($_POST['userSelected']);
                 } else {
                     $this->user->home();
                 }

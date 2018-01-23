@@ -21,7 +21,6 @@ abstract class Model
     public function request($request, $parameters = [], $start = null, $end = null) {
         if ($parameters == null) {
             $req = $this->db->query($request);
-            //var_dump($req);
         } elseif ($request !== null && ($parameters != null)) {
             $req = $this->db->prepare($request);
             $reqType = substr($request, 0, 6 );

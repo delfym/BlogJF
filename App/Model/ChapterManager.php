@@ -39,7 +39,7 @@ class ChapterManager extends Model {
             );
     }
 
-    //récupère la liste des chapitres sans limite
+    //récupère la liste complète des chapitres
     public function getChaptersList() {
         return $this->request('SELECT * FROM chapter ORDER BY id');
     }

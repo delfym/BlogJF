@@ -8,7 +8,7 @@ class AdminView  {
     protected $template = 'template'; // par défaut
 
 
-    public function generate($view, $variables = [], $reports =[]){
+    public function generate($view, $variables = [], $reports =[], $users=[]){
 
         $viewPath = dirname(__DIR__ ) . '/' . $this->view . $view;
          ob_start();
@@ -18,6 +18,10 @@ class AdminView  {
 
         if (!empty($reports)) {
             extract($reports);
+        }
+
+        if (!empty($users)) {
+            extract($users);
         }
 
         $content = ob_get_clean();

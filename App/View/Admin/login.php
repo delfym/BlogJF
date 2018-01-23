@@ -1,6 +1,5 @@
-<?php
-require_once dirname(__DIR__) . '/template.php';
-?>
+<?php require_once dirname(__DIR__) . '/template.php';  ?>
+
 <div class="container align-items-start">
     <div class="row col align-items-center justify-content-center">
         <?php

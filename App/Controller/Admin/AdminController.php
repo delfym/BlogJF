@@ -18,10 +18,11 @@ class AdminController extends \App\Controller\Controller
         $this->users = new Users();
     }
 
-    public function home($data=[]) {
+    public function home() {
         $chapters = $this->chapter->getChaptersList();
         $reports = $this->comment->getReports();
-        $this->viewAdmin->generate('chapterList',$chapters,$reports);
+        $users = $this->users->getUsers();
+        $this->viewAdmin->generate('chapterList',$chapters, $reports, $users);
     }
 
     public function chapter($id) {
@@ -38,15 +39,12 @@ class AdminController extends \App\Controller\Controller
 
     public function delete($id){
         $this->chapter->delete($id);
-        $chapters = $this->chapter->getChaptersList();
-        $this->viewAdmin->generate('chapterList', $chapters);
+        $this->home();
     }
 
     public function create($data){
         $newChapter = $this->chapter->create($data);
-       // echo '<br/>ici 1 <br/>';
         $chapters = $this->chapter->getChapters();
-        //echo '<br/>ici 2 <br/>';
         $this->viewAdmin->generate('getChaptersList', $chapters);
     }
 
@@ -63,11 +61,6 @@ class AdminController extends \App\Controller\Controller
         $this->comment->deleteReport($id);
         $this->comment->deleteComment($id);
         $this->home();
-    }
-
-    public function reset(){
-        $_SESSION ['access'] = false;
-        $this->view->generate('home');
     }
 
 }
