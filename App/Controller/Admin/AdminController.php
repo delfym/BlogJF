@@ -43,7 +43,7 @@ class AdminController extends \App\Controller\Controller
     }
 
     public function create($data){
-        $newChapter = $this->chapter->create($data);
+        $this->chapter->create($data);
         $chapters = $this->chapter->getChapters();
         $this->viewAdmin->generate('getChaptersList', $chapters);
     }

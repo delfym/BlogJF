@@ -4,7 +4,7 @@ require_once dirname(__DIR__) . '/template.php';
 
 <div class="container col-lg-8 text-justify">
 
-<?php if(!$_SESSION['idChap']){
+<?php if(!isset($_SESSION['idChap'])){
 $_SESSION ['idChap'] = $_GET['id'] ;
 } ?>
     <div class="row">

@@ -10,8 +10,6 @@ namespace App\Model\Admin;
 
 
 class Users extends \App\Model\Model {
-    private $username;
-    private $password;
 
     public function addUser($login){
       //  $pass = htmlspecialchars($login['password']);

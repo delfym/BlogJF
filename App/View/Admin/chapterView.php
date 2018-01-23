@@ -15,10 +15,10 @@
                 <br/><br/>
                 <textarea title="chapterContent" id="textAdmin" class="form-control" rows="10" cols="555"
                           name="textAdmin"><?= $variables[0]['content'] ?></textarea>
-                <span class="row ">
-                    <button class="btn btn-group btn-primary" name="update" type="submit">Modifier</button>
-                    <button class="btn btn-group btn-primary" name="delete" type="submit">Supprimer</button>
-                    <button class="btn btn-group btn-primary" name="cancel" type="submit">Retour</button>
+                <span class="row justify-content-center">
+                    <button class="btn btn-group btn-primary btn-sm" name="update" type="submit">Modifier</button>
+                    <button class="btn btn-group btn-primary btn-sm" name="delete" type="submit">Supprimer</button>
+                    <button class="btn btn-group btn-primary btn-sm" name="cancel" type="submit">Retour</button>
                 </span>
             </div>
         </div>

@@ -9,6 +9,10 @@ body, html {
     background-color: #ac0800;
 }
 
+#title {
+	color: #ac0800;
+}
+
 #page {
 	background-color: #9E9E9E;
 	color: #795548;
@@ -39,10 +43,6 @@ a :hover, .nav-item :hover {
 #points :hover, #points {
 	color: #795548 !important;
 	text-decoration-line:none;
-}
-
-#title {
-	color: #ac0800;
 }
 
 #titleHome {
@@ -129,8 +129,12 @@ input #commentInp {
 	justify-content: center;
 }
 
-.adminArray {
+.adminArray, .newChap {
 	text-align: center;
+}
+
+#newChap {
+	color: #795548;
 }
 
 @media all {
