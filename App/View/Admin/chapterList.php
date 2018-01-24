@@ -63,7 +63,7 @@
                 <tbody class="adminArray">
                 <tr class="">
                     <td class="">
-                        <form class="form-inline adminArray" method="post" action="indexAdmin.php">
+                        <form class="form-inline centerAction" method="post" action="indexAdmin.php">
                             <label>
                                 <select class="list-group list-group-item-dark" name="userSelected">
                                     <?php foreach ($users as $user) : ?>
@@ -79,7 +79,7 @@
                                     type="submit">Supprimer
                             </button>
                         </form>
-                    <td class="">
+                    <td>
                         <a class="btn btn-group btn-primary btn-sm" name="new"
                            href="indexAdmin.php?p=loginNew">Ajouter un adminstrateur</a>
                     </td>
@@ -109,7 +109,7 @@
                             <td><?= $report['comment'] ?></td>
                             <td><?= $report['cause'] ?></td>
                             <td>
-                                <div class="btn-group-justified align-items-center">
+                                <div class="btn-group-justified centerAction">
                                     <a class="btn btn-sm"
                                        href="indexAdmin.php?p=report&id=<?= $report['id'] ?>&action=ok">Valider le
                                         commentaire

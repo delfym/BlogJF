@@ -16,7 +16,6 @@ class RouterUsers extends Router {
     }
 
     public function Route(){
-
         try {
             if (isset($_GET['p']) && !empty($_GET['p'])){
                 $_GET['p'] = (string) ($_GET['p']);

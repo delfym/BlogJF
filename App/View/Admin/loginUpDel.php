@@ -1,21 +1,16 @@
 <?php
 require_once dirname(__DIR__) . '/template.php';
-if (!$_SESSION['userSelected']) {
-$_SESSION['userSelected'] = $_POST['userSelected'];
-}
-?>
 
+?>
 
 <div class="container align-items-start">
     <div class="row col align-items-center justify-content-center">
         <?php
-
         if (!empty($_SESSION['error'])) {
-            ?>
+        ?>
             <section class="alert alert-danger">
                 <p id="error">Les mots de passe saisis ne sont pas identiques. Merci de les saisir à nouveau</p>
             </section>
-
             <?php
             $_SESSION['error'] = "";
         }
@@ -27,7 +22,7 @@ $_SESSION['userSelected'] = $_POST['userSelected'];
         <form class="form-group col-lg-6 align-items-center " id="login" action="indexAdmin.php" method="post">
             <div class="form-group ">
                 <label class="control-label">Identifiant : </label>
-                <input title="new user" type="text" name="username" class="form-control" value="<?= $_SESSION['username'] ?>" />
+                <input title="new user" type="text" name="username" class="form-control" value="<?= $_SESSION['user'] ?>" />
                 <input title="userId" type="hidden" name="userId" value="<?= $_SESSION['userSelected'] ?>" />
             </div>
             <div class="form-group">

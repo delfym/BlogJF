@@ -14,8 +14,15 @@ body, html {
 }
 
 #page {
+    display: flex;
+    flex-direction: column;
 	background-color: #9E9E9E;
 	color: #795548;
+}
+
+#footer {
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 #commentInp {
@@ -124,7 +131,7 @@ input #commentInp {
 	transform: translate(0, 0);
 }
 
-#btnPages {
+#btnPages, .centerAction {
 	display: flex;
 	justify-content: center;
 }

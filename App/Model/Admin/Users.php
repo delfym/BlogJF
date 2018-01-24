@@ -31,7 +31,7 @@ class Users extends \App\Model\Model {
     }
 
     public function getUser($id){
-       return $this->request('SELECT * FROM login WHERE id = ?', [$id]);
+       return $this->request('SELECT username FROM login WHERE id = ?', [$id]);
     }
 
     public function getUsers(){

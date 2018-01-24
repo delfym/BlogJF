@@ -28,7 +28,7 @@ class Auth extends AdminController
         }
     }
 
-    /*
+/*
  * récupère et contrôle les logins envoyés ds form
  */
     public function setLogin($logs = [])
@@ -68,8 +68,11 @@ class Auth extends AdminController
         $this->viewAdmin->generate('loginNew');
     }
 
-    public function loginChange()
+    public function loginChange($data)
     {
+        $logs = $this->users->getUser($data['userSelected']);
+        $_SESSION['user'] = $logs[0]['username'];
+        $_SESSION['userSelected'] = $data['userSelected'];
         $this->viewAdmin->generate('loginUpDel');
     }
 
@@ -92,7 +95,6 @@ class Auth extends AdminController
         $this->users->deleteUser($id);
         $this->home();
     }
-
 
     public function reset(){
         $_SESSION ['access'] = false;

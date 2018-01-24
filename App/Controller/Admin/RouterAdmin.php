@@ -33,7 +33,7 @@ class RouterAdmin extends \App\Controller\RouterUsers
                     } elseif ($_GET['p'] == 'reset') {
                         $this->auth->reset();
                     } elseif ($_GET['p'] == 'updateUser') {
-                        $this->auth->loginChange();
+                        $this->auth->loginChange($_POST);
                     }
                 } elseif (isset($_POST['chapter'])) {
                     $this->user->chapter($_POST['chapterSelected']);
