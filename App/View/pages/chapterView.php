@@ -10,7 +10,7 @@ $_SESSION ['idChap'] = $_GET['id'] ;
     <div class="row">
         <div class="col-md-12">
             <div class="frame2">
-                <h5 id=title class="text-lg-center"><?= $variables[0]['chpNumber'] ?> - <?= $variables[0]['chapterName'] ?></h5>
+                <h5 id=title class="text-lg-center text-md-center"><?= $variables[0]['chpNumber'] ?> - <?= $variables[0]['chapterName'] ?></h5>
                 <article id="content"><?= htmlspecialchars_decode($variables[0]['content']) ?></article>
             </div>
         </div>

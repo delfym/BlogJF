@@ -68,11 +68,16 @@
     <div class="row">
             <div class="col-sm-10">
                 <?= $content ?>
+
             </div>
     </div>
-
-
     </section>
+    <footer class="pagination">
+        <div class="pagination justify-content-end">
+            <a href="#banniere" type="button" class="btn-lg btn-link">Remonter</a>
+        </div>
+    </footer>
+
 </body>
 
 </html>
